@@ -11,6 +11,6 @@ As a <user> I would like to <action> so that i can <result>
 
 
 Actions
--[ ] 
--[ ]
--[ ]
+- [ ] 
+- [ ]
+- [ ]
