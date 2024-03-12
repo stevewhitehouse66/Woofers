@@ -76,10 +76,10 @@ Wireframe Mobile Dog Detail Page
 Wireframe Desktop Landing Page
 ![Wireframe Desktop Landing Page](images/readme/landing-page-med-large-desktop.png)<br>
 
-Wireframe Desktop Landing Page
+Wireframe Desktop story detail Page
 ![Wireframe Desktop Story Detail Page](images/readme/story-detail-page-med-large-desktop.png)<br>
 
-Wireframe Desktop Landing Page
+Wireframe Desktop dog detail Page
 ![Wireframe Desktop Dog Detail Page](images/readme/dog-detail-page-med-large-desktop.png)<br>
 ### Setting Up
 
