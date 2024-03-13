@@ -1,14 +1,22 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %} 
 <!-- story_detail.html content starts here -->
 <div class="container">
     <div class="story-top">
-        <div class="story-image-container"><img class="story-image" src="{{ story.featured_image.url }}"></div>
+        <div class="story-image-container">
+            
+            {% if "placeholder" in story.featured_image.url %}
+            <img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}">
+            {% else %}
+            <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}">
+            {% endif %}
+        </div>
     <div class="title-text"><h1 class="text-uppercase title-text">{{ story.title }}</h1>
         <p>{{ story.created_on}} by {{ story.author }}</p>
     </a></div></div>
     <br>
-   <div class="story-main"> <p>{{ story.content }}</p>
+   <div class="story-main"> <p>{{ story.content | safe }}</p>
     
 </div>
  
