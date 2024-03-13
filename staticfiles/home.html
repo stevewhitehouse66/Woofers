@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+<!-- home.html content starts here -->
+<div class="container">
+    {% for story in story_list %}
+    <div class="row">
+    <div class="story-top">
+        <div class="story-image-container"><img class="story-image" src="{{ story.featured_image.url }}"></div>
+        <a href="{% url 'story_detail' pk=story.pk %}">
+        <div><h2 class="text-uppercase">{{ story.title }}</h2>
+        </a></div></div>
+        <br>
+       <div class="story-main"> <p>{{ story.excerpt }}</p>
+        <p>{{ story.created_on}} by {{ story.author }}</p>
+        <p>Pinned Post</p></div>
+    
+    </div>    
+      
+      {% endfor %}
+
+    {% for doggo in doggo_list %}
+    <div class="row">
+        <p>Author: {{ doggo.added_by }}</p>
+    
+    <div>
+        <a href="{% url 'doggo_detail' pk=doggo.pk %}">
+        <div class="profile-image-container"><img class="profile-image" src="{{ doggo.profile_image.url }}"></div></div>
+
+        <h2>{{ doggo.name }}</h2>
+        <p>{{ doggo.breed}}</p>
+        <p>{{ doggo.age }}</p>
+        </a>
+        <hr>
+        <p>{{ doggo.added_on}}</p>
+    </div>
+    </div>    
+      
+      {% endfor %}
+</div>
+ 
+ 
+
+
+<!-- index.html content ends here -->
+{% endblock %}

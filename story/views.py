@@ -40,7 +40,7 @@ class DoggoList(ListView):
 
 
 def Home(request):
-#View based on chatGPT suggestion
+#View based on chatGPT suggestion for using data from 2 models in a single view
     """
     View for the home page, displaying data from both Story and Doggo models.
 
