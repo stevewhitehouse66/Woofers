@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Registered"), (2, "Assesment"), (3, "Vet-Check")
-    , (4, "Ready"), (5, "Fostered"), (6, "Advised"))
+    , (4, "Ready"), (5, "Fostered"), (6, "Adopted"))
 
 
 SEX = ((0, "Unsexed"), (1, "Female"), (2, "Male"))
@@ -25,10 +25,10 @@ class Doggo(models.Model):
     location = models.TextField(max_length=200)
     age = models.IntegerField()
     status = models.IntegerField(choices=STATUS, default=0)
-    vet_checked = models.DateTimeField(None)
+    vet_checked = models.DateField(None)
     vet_note = models.TextField()
     vet_medication = models.TextField()
-    vet_vaccinated = models.DateTimeField(None)
+    vet_vaccinated = models.DateField(None)
     vet_neutered = models.IntegerField(choices=NEUTERED, default=0)
     temperament = models.TextField()
     training = models.TextField()
@@ -42,6 +42,6 @@ class Doggo(models.Model):
 
     
     class Meta:
-        ordering = ["added_on"]
+        ordering = ["-added_on"]
     def __str__(self):
-        return f"{self.name}.  Breed - {self.breed} added by {self.added_by}"
+        return f"{self.name}.  Breed - {self.breed}. Added by {self.added_by}"

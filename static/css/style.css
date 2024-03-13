@@ -1,0 +1,31 @@
+/* clear defaults*/
+* {
+    box-sizing: border-box;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+*:focus {
+    color: black;
+}
+/*generic styles*/
+
+body{
+    background-color: #fafafa
+}
+
+/*Layout Styles*/
+.row{
+    padding: 5px;
+    width: 90%;
+    border: 1px solid black
+}
+
+/*Profile Styles*/
+
+.profile-image{
+    max-width: 200px;
+    height: auto;
+}
+    
+

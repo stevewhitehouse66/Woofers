@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %} 
+<!-- index.html content starts here -->
+<div class="container">
+
+    {% for story in object_list %}
+    <div>
+        <p>Author: {{ story.author }}</p>
+    </div>
+    <div>
+        <a href="#" class="story-link">
+        <h2>{{ story.title }}</h2>
+        </a>
+        <p>{{ story.excerpt }}</p>
+        <hr>
+        <p>{{ story.created_on }}</p>
+    </div>
+        
+      
+      {% endfor %}
+</div>
+ 
+ 
+
+
+<!-- index.html content ends here -->
+{% endblock %}

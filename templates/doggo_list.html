@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %} 
+<!-- index.html content starts here -->
+<div class="container">
+
+    {% for doggo in object_list %}
+    <div>
+        <p>Author: {{ doggo.added_by }}</p>
+    </div>
+    <div>
+        <a href="#" class="story-link">
+        <h2>{{ doggo.name }}</h2>
+        </a>
+        <hr>
+        <p class="card-text text-muted h6">{{ doggo.added_on}}</p>
+    </div>
+        
+      
+      {% endfor %}
+</div>
+ 
+ 
+
+
+<!-- index.html content ends here -->
+{% endblock %}
