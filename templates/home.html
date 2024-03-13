@@ -39,8 +39,6 @@
 
 {% for doggo in doggo_list %}
 <div class="row">
-    <p>Author: {{ doggo.added_by }}</p>
-
     <div>
         <a href="{% url 'doggo_detail' pk=doggo.pk %}">
             <div class="profile-image-container"><img class="profile-image" src="{{ doggo.profile_image.url }}"></div>

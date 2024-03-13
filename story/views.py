@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView , DetailView
 from .models import Story
 from doggo.models import Doggo
+from .forms import StoryForm
 
 class StoryList(ListView):
     """
@@ -67,3 +68,13 @@ class StoryDetailView(DetailView):
 class DoggoDetailView(DetailView):
     model = Doggo
     template_name = 'doggo_detail.html'
+
+def create_product(request):
+    if request.method == 'POST':
+        form = StoryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('story_list')  # Assuming you have a view named 'product_list'
+    else:
+        form = StoryForm()
+    return render(request, 'create_story.html', {'form': form})
