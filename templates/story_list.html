@@ -4,7 +4,14 @@
 <div class="container">
 
     {% for story in object_list %}
+
     <div>
+        {% if "placeholder" in story.featured_image.url %}
+            <img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}">
+            {% else %}
+            <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}">
+            {% endif %}
+            
         <p>Author: {{ story.author }}</p>
     </div>
     <div>
