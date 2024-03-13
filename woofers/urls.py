@@ -24,7 +24,7 @@ Including another URLconf
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  #admin URL
+    path('admin/', admin.site.urls),
     path("", include("story.urls"), name="story-urls"),
     
     

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView , DetailView
 from .models import Story
 from doggo.models import Doggo
 
@@ -59,3 +59,11 @@ def Home(request):
     story_list = Story.objects.filter(pinned =1)
     doggo_list = Doggo.objects.exclude(status=0)
     return render(request, 'home.html', {'story_list': story_list, 'doggo_list': doggo_list})
+
+class StoryDetailView(DetailView):
+    model = Story
+    template_name = 'story_detail.html'
+
+class DoggoDetailView(DetailView):
+    model = Doggo
+    template_name = 'doggo_detail.html'

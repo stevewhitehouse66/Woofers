@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %} 
+<!-- story_detail.html content starts here -->
+<div class="container">
+    <div class="story-top">
+        <div class="story-image-container"><img class="story-image" src="{{ story.featured_image.url }}"></div>
+    <div class="title-text"><h1 class="text-uppercase title-text">{{ story.title }}</h1>
+        <p>{{ story.created_on}} by {{ story.author }}</p>
+    </a></div></div>
+    <br>
+   <div class="story-main"> <p>{{ story.content }}</p>
+    
+</div>
+ 
+ 
+
+
+<!-- index.html content ends here -->
+{% endblock %}

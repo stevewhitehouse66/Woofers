@@ -1,19 +1,23 @@
 {% extends "base.html" %}
+
+
+
 {% block content %}
 
 <!-- home.html content starts here -->
 <div class="container">
     {% for story in story_list %}
     <div class="row">
-    <div>
-        <a href="#" class="story-link">
-        <h2>{{ story.title }}</h2>
-        </a>
-        <hr>
-        <p>{{ story.excerpt }}</p>
+    <div class="story-top">
+        <div class="story-image-container"><img class="story-image" src="{{ story.featured_image.url }}"></div>
+        <a href="{% url 'story_detail' pk=story.pk %}">
+        <div><h2 class="text-uppercase">{{ story.title }}</h2>
+        </a></div></div>
+        <br>
+       <div class="story-main"> <p>{{ story.excerpt }}</p>
         <p>{{ story.created_on}} by {{ story.author }}</p>
-        <p>Pinned Post</p>
-    </div>
+        <p>Pinned Post</p></div>
+    
     </div>    
       
       {% endfor %}
@@ -23,7 +27,7 @@
         <p>Author: {{ doggo.added_by }}</p>
     
     <div>
-        <a href="#" class="doggo-link">
+        <a href="{% url 'doggo_detail' pk=doggo.pk %}">
         <div class="profile-image-container"><img class="profile-image" src="{{ doggo.profile_image.url }}"></div></div>
 
         <h2>{{ doggo.name }}</h2>
