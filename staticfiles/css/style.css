@@ -19,7 +19,7 @@
 body{
     background-color: #f5f5f5;
     background: rgb(253,221,172);
-    background: linear-gradient(144deg, rgb(248, 235, 215) 0%, rgb(250, 249, 248) 100%);
+    background: linear-gradient(180deg, rgb(248, 235, 215) 0%, rgb(250, 249, 248) 100%);
 }
 
 
@@ -27,45 +27,81 @@ a{
     text-decoration: none;
     color: black;
 }
+hr{
+    color: #4A4A4F;
+    width: 90%
+}
 
 /*Layout Styles*/
 .row{
     padding: 5px;
     width: 100%;
-    border: 1px solid black
+    box-shadow:  0 1px 1px #4A4A4F;
+    margin: 5px;
+    border-radius: 5%;
+    background: linear-gradient(144deg, rgb(248, 235, 215) 0%, rgb(250, 249, 248) 100%);
 }
+#navbar-nav{
+    text-align: right;
+    background: rgb(248, 235, 215)
+}
+#navbar-text{
+    text-align: end;
+    
+}
+.dropdown-menu{
+
+    margin-top: 5px;
+    width: fit-content;
+    border: 0;
+    padding-inline:  20px;
+    background: rgb(248, 235, 215)
+}
+
 .brand-text{
     font-family: "Open Sans", Roboto, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #4A4A4F;
+
 }
-.title-text{
-    font-family: "Open Sans", Roboto, sans-serif;
-    margin: auto;
-}
+
 .column{
     width: 100%
 }
 
 /*Story Styles*/
 
+.title-text{
+    font-family: "Open Sans", Roboto, sans-serif;
+    font-size: medium;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 .story-top{
     display: flex;
-    flex-direction: row;
-    border: 1px solid blue;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
     text-align: center;
     
 
 }
 .story-image{
-    max-width: 300px;
+    max-width: 100px;
     height: auto;
-    padding: 10px;
+    border-radius: 10%;
+    margin:5px;
 
 }
 .story-main{
-    border: 1px solid rgb(4, 59, 11);
+    
+    
     width: 100%;
     font-family: Roboto;
     text-align: left;
+    padding-left: 10px;
 }
 
 
@@ -77,9 +113,41 @@ a{
 }
     
 .doggo-image{
-    max-width: 300px;
+    max-width: 100px;
     height: auto;
-    padding: 10px;
-
+    border-radius: 10%;
+    margin:5px;
 }
 
+/*Footer Styles*/
+
+.footer{
+    margin: auto;
+    font-size: large;
+}
+
+/* Auth Form Styles*/
+
+.btn-signup,
+.btn-edit {
+    background-color: #3d9cb3;
+    color: #fff;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #fff;
+    color: #3d9cb3;
+}
+.btn-delete {
+    color: #fff;
+    background: #E84610;
+}
+
+.faded {
+    color: rgb(172, 175, 175);
+}
+
+.approval {
+    color: rgb(222, 146, 168);
+}

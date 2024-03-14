@@ -8,7 +8,8 @@
 <div class="container">
     {% for story in story_list %}
     <div class="row">
-        <div class="story-top">
+        <div class="col-12 mt-3">
+        
             <div class="story-image-container">
                 {% if "placeholder" in story.featured_image.url %}
                 <img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}">
@@ -16,40 +17,39 @@
                 <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}">
                 {% endif %}
             </div>
-        <div class="column">
-            <div>
-                <a href="{% url 'story_detail' pk=story.pk %}">
-                    <div class="title-text">
-                    <h2 class="text-uppercase title-text">{{ story.title }}</h2></div>
-                </a>
-            </div>
+            <div class="story-top">
+                <div class="column">
+                    <div>
+                     <a href="{% url 'story_detail' pk=story.pk %}">
+                     <div class="title-text">
+                     <h2 class="text-uppercase title-text">{{ story.title }}</h2></div>
+                    </a>
+                    </div>
              <div class="story-main">
-            <p>{{ story.excerpt }}</p>
-            <p>{{ story.created_on}} by {{ story.author }}</p>
-            <p>Pinned Post</p>
+            <p class="excerpt">{{ story.excerpt | truncatechars:150}}</p>
+            <p class="created-on">{{ story.created_on}} by {{ story.author }}</p>
+            <p class="pinned">Pinned Post</p>
             </div>
+        </div></div>
         </div>
-    </div>
     <br>
+    </div>
 
+    {% endfor %}
 
-</div>
-
-{% endfor %}
-
-{% for doggo in doggo_list %}
-<div class="row">
-    <div>
+    {% for doggo in doggo_list %}
+    <div class="row">
+        <div class="col-12 mt-3">
         <a href="{% url 'doggo_detail' pk=doggo.pk %}">
             <div class="profile-image-container">
                 
-                {% if "placeholder" in doggo.profile_image.url %}
+            {% if "placeholder" in doggo.profile_image.url %}
             <img src="{% static 'images/default_doggo2.png' %}" class="doggo-image" alt="{{ doggo.name. }}">
             {% else %}
             <img src="{{ doggo.profile_image.url }}" class="doggo-image" alt="{{ doggo.name }}">
             {% endif %}
             </div>
-    </div>
+        </div>
 
     <h2 class="title-text">{{ doggo.name }}</h2>
     <p> Breed: {{ doggo.breed}}</p>
@@ -60,11 +60,12 @@
         <p> About: {{ doggo.notes}}</p>
     </div>
     <p> Added on: {{ doggo.added_on}}</p>
-</div>
+    </div>
+    {% endfor %}
 </div>
 
-{% endfor %}
-</div>
+
+
 
 
 
