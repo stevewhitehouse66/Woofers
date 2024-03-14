@@ -43,19 +43,19 @@ hr{
 }
 #navbar-nav{
     text-align: right;
-    background: rgb(248, 235, 215);
+    background: rgb(248, 235, 215)
 }
 #navbar-text{
     text-align: end;
     
 }
 .dropdown-menu{
-    box-shadow:  0 1px 1px #4A4A4F;
+
     margin-top: 5px;
     width: fit-content;
     border: 0;
     padding-inline:  20px;
-    background: rgb(248, 235, 215);
+    background: rgb(248, 235, 215)
 }
 
 .brand-text{
