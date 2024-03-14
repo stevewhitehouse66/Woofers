@@ -4,28 +4,36 @@
 <!-- index.html content starts here -->
 <div class="container">
 
-    {% for story in object_list %}
-
-    <div>
-        {% if "placeholder" in story.featured_image.url %}
-            <img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}">
-            {% else %}
-            <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}">
-            {% endif %}
-            
-        <p>Author: {{ story.author }}</p>
-    </div>
-    <div>
-        <a href="{% url 'story_detail' pk=story.pk %}" class="story-link">
-        <h2>{{ story.title }}</h2>
-        </a>
-        <p>{{ story.excerpt }}</p>
-        <hr>
-        <p>{{ story.created_on }}</p>
-    </div>
+    {% for story in story_list %}
+    <div class="row">
+        <div class="col-12 mt-3">
         
-      
-      {% endfor %}
+            <div class="story-image-container">
+                {% if "placeholder" in story.featured_image.url %}
+                <img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}">
+                {% else %}
+                <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}">
+                {% endif %}
+            </div>
+            <div class="story-top">
+                <div class="column">
+                    <div>
+                     <a href="{% url 'story_detail' pk=story.pk %}">
+                     <div class="title-text">
+                     <h2 class="text-uppercase title-text">{{ story.title }}</h2></div>
+                    </a>
+                    </div>
+             <div class="story-main">
+            <p class="excerpt">{{ story.excerpt | truncatechars:150}}</p>
+            <p class="created-on">{{ story.created_on}} by {{ story.author }}</p>
+            <p class="pinned">Pinned Post</p>
+            </div>
+        </div></div>
+        </div>
+    <br>
+    </div>
+
+    {% endfor %}
 </div>
  
  

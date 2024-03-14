@@ -12,14 +12,15 @@
             <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}">
             {% endif %}
         </div>
-    <div class="title-text"><h1 class="text-uppercase title-text">{{ story.title }}</h1>
+        <div class="title-text"><h1 class="text-uppercase title-text">{{ story.title }}</h1>
         <p>{{ story.created_on}} by {{ story.author }}</p>
-    </a></div></div>
+        </div>
+    </div>
     <br>
    <div class="story-main"> <p>{{ story.content | safe }}</p>
     
-</div>
- 
+    </div>
+</div> 
  
 
 
