@@ -39,11 +39,16 @@
 
 {% for doggo in doggo_list %}
 <div class="row">
-    <p>Author: {{ doggo.added_by }}</p>
-
     <div>
         <a href="{% url 'doggo_detail' pk=doggo.pk %}">
-            <div class="profile-image-container"><img class="profile-image" src="{{ doggo.profile_image.url }}"></div>
+            <div class="profile-image-container">
+                
+                {% if "placeholder" in doggo.profile_image.url %}
+            <img src="{% static 'images/default_doggo2.png' %}" class="doggo-image" alt="{{ doggo.name. }}">
+            {% else %}
+            <img src="{{ doggo.profile_image.url }}" class="doggo-image" alt="{{ doggo.name }}">
+            {% endif %}
+            </div>
     </div>
 
     <h2 class="title-text">{{ doggo.name }}</h2>

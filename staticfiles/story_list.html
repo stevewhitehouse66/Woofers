@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %} 
 <!-- index.html content starts here -->
 <div class="container">
@@ -15,7 +16,7 @@
         <p>Author: {{ story.author }}</p>
     </div>
     <div>
-        <a href="#" class="story-link">
+        <a href="{% url 'story_detail' pk=story.pk %}" class="story-link">
         <h2>{{ story.title }}</h2>
         </a>
         <p>{{ story.excerpt }}</p>

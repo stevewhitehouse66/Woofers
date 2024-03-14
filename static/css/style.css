@@ -76,4 +76,10 @@ a{
     height: auto;
 }
     
+.doggo-image{
+    max-width: 300px;
+    height: auto;
+    padding: 10px;
+
+}
 

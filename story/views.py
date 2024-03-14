@@ -69,7 +69,7 @@ class DoggoDetailView(DetailView):
     model = Doggo
     template_name = 'doggo_detail.html'
 
-def create_product(request):
+def create_story(request):
     if request.method == 'POST':
         form = StoryForm(request.POST)
         if form.is_valid():
