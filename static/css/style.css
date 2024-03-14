@@ -34,8 +34,15 @@ a{
     width: 100%;
     border: 1px solid black
 }
+#navbar-text{
+    text-align: end;
+}
 .brand-text{
     font-family: "Open Sans", Roboto, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #4A4A4F;
+
 }
 .title-text{
     font-family: "Open Sans", Roboto, sans-serif;
@@ -83,3 +90,9 @@ a{
 
 }
 
+/*Footer Styles*/
+
+.footer{
+    margin: auto;
+    font-size: large;
+}
