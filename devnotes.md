@@ -7,12 +7,6 @@ Doggo.model, reused with major mods from ALLs WELL project
 #### images
 we_love_you.jpg created by steve using leonardo.ai
 
-for later...
-  {# <!-- <li class="nav-item">
-                        <a class="nav-link {% if request.path == story_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'story' %}">Stories</a>
-                    </li>-->
-                   <!-- <li class="nav-item">
-                        <a class="nav-link {% if request.path == doggo_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'doggo' %}">Dogs</a>
-                    </li>--> #}
+#### allauth
+
+allauth installed and set up according to LMS content, code provied was slightly modifed to reflect new site

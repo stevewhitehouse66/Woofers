@@ -25,6 +25,7 @@ Including another URLconf
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("accounts/", include("allauth.urls")),
     path("", include("story.urls"), name="story-urls"),
     path('summernote/', include('django_summernote.urls')),
     
