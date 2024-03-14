@@ -93,6 +93,7 @@ hr{
     height: auto;
     border-radius: 10%;
     margin:5px;
+    box-shadow:  0 2px 2px #4A4A4F;
 
 }
 .story-main{
@@ -117,6 +118,7 @@ hr{
     height: auto;
     border-radius: 10%;
     margin:5px;
+    box-shadow:  0 2px 2px #4A4A4F;
 }
 
 /*Footer Styles*/

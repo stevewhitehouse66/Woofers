@@ -10,3 +10,4 @@ we_love_you.jpg created by steve using leonardo.ai
 #### allauth
 
 allauth installed and set up according to LMS content, code provied was slightly modifed to reflect new site
+signup.html modified as per LMS lesson
