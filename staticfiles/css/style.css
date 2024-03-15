@@ -17,13 +17,16 @@
 /*generic styles*/
 
 body{
+    min-height: 100vh;
     background-color: #f5f5f5;
     background: rgb(253,221,172);
-    background: linear-gradient(180deg, rgb(248, 235, 215) 0%, rgb(250, 249, 248) 100%);
+    background: linear-gradient(180deg, rgb(248, 235, 215) 0%, rgb(250, 249, 248) 100%), rgb(248, 235, 215) 0%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
@@ -31,14 +34,26 @@ hr{
     color: #4A4A4F;
     width: 90%
 }
+h4{
+    font-family: "Open Sans", Roboto, sans-serif;
+    text-transform: capitalize;
+}
 
 /*Layout Styles*/
+.home-container{
+    display: flex;
+    flex-direction: column;
+}
+.story-container{}
+
+.doggo-container{}
+
 .row{
     padding: 5px;
     width: 100%;
     box-shadow:  0 1px 1px #4A4A4F;
     margin: 5px;
-    border-radius: 5%;
+    border-radius: 10px;
     background: linear-gradient(144deg, rgb(248, 235, 215) 0%, rgb(250, 249, 248) 100%);
 }
 #navbar-nav{
@@ -58,9 +73,10 @@ hr{
     background: rgb(248, 235, 215)
 }
 
+
 .brand-text{
     font-family: "Open Sans", Roboto, sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: #4A4A4F;
 
@@ -93,6 +109,7 @@ hr{
     height: auto;
     border-radius: 10%;
     margin:5px;
+    box-shadow:  0 2px 2px #4A4A4F;
 
 }
 .story-main{
@@ -107,6 +124,14 @@ hr{
 
 /*Profile Styles*/
 
+.name-text{
+    font-family: "Open Sans", Roboto, sans-serif;
+    font-size: medium;
+    margin: auto;
+    padding-top: 10px;
+    
+}
+
 .profile-image{
     max-width: 200px;
     height: auto;
@@ -117,13 +142,23 @@ hr{
     height: auto;
     border-radius: 10%;
     margin:5px;
+    box-shadow:  0 2px 2px #4A4A4F;
+}
+.doggo-main{
+    width: 100%;
+    font-family: Roboto;
+    text-align: left;
+    padding: 0;
+    padding-left: 10px;
 }
 
 /*Footer Styles*/
 
 .footer{
-    margin: auto;
-    font-size: large;
+    padding: 0;
+    margin: 0;
+    margin-inline: auto;
+    font-size: medium;
 }
 
 /* Auth Form Styles*/
@@ -151,3 +186,39 @@ hr{
 .approval {
     color: rgb(222, 146, 168);
 }
+/* Other Form Styles*/
+
+.create-form{
+    padding-bottom: 50px;
+}
+
+.staff-links{
+    display: flex;
+    flex-direction: row;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+/*Media Queries*/
+
+@media (min-width: 480px) {
+    .home-container{
+        height: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+    .story-container{
+        width: 70%;
+        height: 120px;
+        padding: 10px;
+    }
+    
+    .doggo-container{
+        width: 30%;
+        height: 120px;
+        padding: 10px;
+    }
+  }

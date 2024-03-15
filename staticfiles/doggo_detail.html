@@ -3,6 +3,14 @@
 {% load static %}
 <!-- story_detail.html content starts here -->
 <div class="container">
+    {% if user.is_staff %}
+        <div class="staff-links">
+            <ul><li><a class="nav-link" href="{% url 'doggo_add' %}"><i class="fa-regular fa-plus"></i> New</a></li>
+                <li><a class="nav-link" href="{% url 'edit'%}"><i class="fa-regular fa-edit"></i> Edit</a></li>
+                <li><a class="nav-link" href="{% url 'delete'%}"><i class="fa-regular fa-trash-can"></i> Delete</a></li>
+            </ul>
+        </div>
+        {% endif %}
     <div class="story-top">
         <div class="story-image-container">
             {% if "placeholder" in doggo.profile_image.url %}
@@ -11,11 +19,16 @@
             <img src="{{ doggo.profile_image.url }}" class="doggo-image" alt="{{ doggo.name }}">
             {% endif %}
         </div>
-    <div class="title-text"><h1 class="text-uppercase title-text">{{ doggo.name. }}</h1>
-        <p>Added on {{ doggo.added_on}}</p>
-    </a></div></div>
-    <br>
-   <div class="story-main"> <p>{{ doggo.about | safe }}</p>
+        <h2 class="name-text">{{ doggo.name }}</h2>
+        <p> Breed: {{ doggo.breed}}</p>
+        <p> Age: {{ doggo.age }}</p>
+        </a>
+        <hr>
+        <div class="doggo-main">
+            <p> About: {{ doggo.notes}}</p>
+        </div>
+        <p> Added on: {{ doggo.added_on}}</p>
+        </div>
     
 </div>
  
