@@ -6,6 +6,7 @@ from doggo.models import Doggo
 from .forms import StoryForm
 from doggo.forms import DoggoForm
 
+
 class StoryList(ListView):
     """
     Display a list of :model:`story.Story`
@@ -72,11 +73,10 @@ class DoggoDetailView(DetailView):
     template_name = 'doggo_detail.html'
 
 
-
 def StoryCreate(request):
     
     if request.method == 'POST':
-        form = StoryForm(request.POST)
+        form = StoryForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('/story')
@@ -88,11 +88,13 @@ def StoryCreate(request):
 def DoggoCreate(request):
     
     if request.method == 'POST':
-        form = DoggoForm(request.POST)
+        form = DoggoForm(request.POST, request.FILES)
         if form.is_valid():
+
             form.save()
             return redirect('/doggo')
     else:
         form = DoggoForm()
     
     return render(request, 'doggo_form.html', {'form': form})
+
