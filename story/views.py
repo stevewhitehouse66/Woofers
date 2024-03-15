@@ -79,7 +79,7 @@ def StoryCreate(request):
         form = StoryForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success-url')
+            return redirect('/story')
     else:
         form = StoryForm()
     
@@ -91,7 +91,7 @@ def DoggoCreate(request):
         form = DoggoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('success-url')
+            return redirect('/doggo')
     else:
         form = DoggoForm()
     
