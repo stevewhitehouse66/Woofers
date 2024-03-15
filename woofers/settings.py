@@ -17,7 +17,7 @@ if os.path.isfile('env.py'):
     import env
 
 # Cloudinary for API support    
-from env import CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET
+
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -74,9 +74,9 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
 cloudinary.config(
-    cloud_name=CLOUDINARY_CLOUD_NAME,
-    api_key=CLOUDINARY_API_KEY,
-    api_secret=CLOUDINARY_API_SECRET
+    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret=os.environ.get('CLOUDINARY_API_SECRET')
 )
 
 
