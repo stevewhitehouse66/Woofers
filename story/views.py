@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView , DetailView
+from django.contrib import messages
+from django.views.generic import ListView , DetailView, CreateView
 from .models import Story
 from doggo.models import Doggo
 from .forms import StoryForm
@@ -36,7 +37,7 @@ class DoggoList(ListView):
    :template:`story_list.html`
    """
    queryset = Doggo.objects.all()
-   template_name = "home.html"
+   template_name = "doggo_list.html"
    context_object_name = "doggo_list"
 
 
@@ -69,12 +70,17 @@ class DoggoDetailView(DetailView):
     model = Doggo
     template_name = 'doggo_detail.html'
 
-def create_story(request):
+
+
+def StoryCreate(request):
+    
     if request.method == 'POST':
         form = StoryForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('story_list')  # Assuming you have a view named 'product_list'
+            return redirect('success-url')
     else:
         form = StoryForm()
-    return render(request, 'create_story.html', {'form': form})
+    
+    return render(request, 'story_form.html', {'form': form})
+

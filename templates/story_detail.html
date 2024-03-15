@@ -1,8 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
+{% url 'story_add' as add_url %}
+{% url 'edit' as edit_url %}
+{% url 'delete' as delete_url %}
 {% block content %} 
 <!-- story_detail.html content starts here -->
 <div class="container">
+    {% if user.is_staff %}
+        <div class="staff-links">
+            <ul><li><a class="nav-link" href="{% url 'story_add' %}"><i class="fa-regular fa-plus"></i> New</a></li>
+                <li><a class="nav-link" href="{% url 'edit'%}"><i class="fa-regular fa-edit"></i> Edit</a></li>
+                <li><a class="nav-link" href="{% url 'delete'%}"><i class="fa-regular fa-trash-can"></i> Delete</a></li>
+            </ul>
+        </div>
+        {% endif %}
     <div class="story-top">
         <div class="story-image-container">
             

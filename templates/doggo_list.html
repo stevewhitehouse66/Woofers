@@ -1,27 +1,33 @@
 {% extends "base.html" %}
-{5 load static %}
+{% load static %}
+
 {% block content %} 
-<!-- index.html content starts here -->
-<div class="container">
 
-    {% for doggo in object_list %}
-    <div>
-        <p>Author: {{ doggo.added_by }}</p>
+<h4 class="sub-title text-center">Our Dogs</h4>
+{% for doggo in doggo_list %}
+<div class="row">
+    <div class="col-12 mt-3">
+    <a href="{% url 'doggo_detail' pk=doggo.pk %}">
+        <div class="profile-image-container">
+            
+        {% if "placeholder" in doggo.profile_image.url %}
+        <img src="{% static 'images/default_doggo2.png' %}" class="doggo-image" alt="{{ doggo.name. }}">
+        {% else %}
+        <img src="{{ doggo.profile_image.url }}" class="doggo-image" alt="{{ doggo.name }}">
+        {% endif %}
+        </div>
     </div>
-    <div>
-        <a href="#" class="story-link">
-        <h2>{{ doggo.name }}</h2>
-        </a>
-        <hr>
-        <p class="card-text text-muted h6">{{ doggo.added_on}}</p>
-    </div>
-        
-      
-    {% endfor %}
+
+<h2 class="name-text">{{ doggo.name }}</h2>
+<p> Breed: {{ doggo.breed}}</p>
+<p> Age: {{ doggo.age }}</p>
+</a>
+<hr>
+<div class="doggo-main">
+    <p> About: {{ doggo.notes}}</p>
 </div>
- 
- 
-
-
-<!-- index.html content ends here -->
+<p> Added on: {{ doggo.added_on}}</p>
+</div>
+{% endfor %}
+</div>
 {% endblock %}

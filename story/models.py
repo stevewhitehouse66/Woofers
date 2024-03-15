@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
+
 
 # Create your models here.
 # model reused from hackathon project ALLs WELL
@@ -22,5 +24,9 @@ class Story(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     class Meta:
         ordering = ["-created_on"]
+
     def __str__(self):
         return f"Story {self.title} written by {self.author}"
+    
+    def get_absolute_url(self):
+        return reverse ('story:story_list',kwargs={'pk':self.pk})

@@ -5,38 +5,42 @@
 {% block content %}
 
 <!-- home.html content starts here -->
-<div class="container">
-    {% for story in story_list %}
-    <div class="row">
-        <div class="col-12 mt-3">
+<div class="home-container">
+    <div class="story-container">
+        <h4 class="sub-title text-center">Stories</h4>
+        {% for story in story_list %}
+        <div class="row">
+            <div class="col-12 mt-3">
         
-            <div class="story-image-container">
-                {% if "placeholder" in story.featured_image.url %}
-                <img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}">
-                {% else %}
-                <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}">
-                {% endif %}
+                <div class="story-image-container">
+                    {% if "placeholder" in story.featured_image.url %}
+                    <img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}">
+                 {% else %}
+                    <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}">
+                    {% endif %}
+                </div>
+             <div class="story-top">
+                    <div class="column">
+                     <div>
+                        <a href="{% url 'story_detail' pk=story.pk %}">
+                        <div class="title-text">
+                        <h2 class="text-uppercase title-text">{{ story.title }}</h2></div>
+                     </a>
+                        </div>
+                <div class="story-main">
+                <p class="excerpt">{{ story.excerpt | truncatechars:150}}</p>
+                <p class="created-on">{{ story.created_on}} by {{ story.author }}</p>
+                <p class="pinned">Pinned Post</p>
+                </div>
+            </div></div>
             </div>
-            <div class="story-top">
-                <div class="column">
-                    <div>
-                     <a href="{% url 'story_detail' pk=story.pk %}">
-                     <div class="title-text">
-                     <h2 class="text-uppercase title-text">{{ story.title }}</h2></div>
-                    </a>
-                    </div>
-             <div class="story-main">
-            <p class="excerpt">{{ story.excerpt | truncatechars:150}}</p>
-            <p class="created-on">{{ story.created_on}} by {{ story.author }}</p>
-            <p class="pinned">Pinned Post</p>
-            </div>
-        </div></div>
+        <br>
         </div>
-    <br>
+
+        {% endfor %}
     </div>
-
-    {% endfor %}
-
+<div class="doggo-container">
+    <h4 class="sub-title text-center">Our Dogs</h4>
     {% for doggo in doggo_list %}
     <div class="row">
         <div class="col-12 mt-3">
@@ -51,17 +55,18 @@
             </div>
         </div>
 
-    <h2 class="title-text">{{ doggo.name }}</h2>
+    <h2 class="name-text">{{ doggo.name }}</h2>
     <p> Breed: {{ doggo.breed}}</p>
     <p> Age: {{ doggo.age }}</p>
     </a>
     <hr>
-    <div class="story-main">
+    <div class="doggo-main">
         <p> About: {{ doggo.notes}}</p>
     </div>
     <p> Added on: {{ doggo.added_on}}</p>
     </div>
     {% endfor %}
+</div>
 </div>
 
 
