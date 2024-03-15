@@ -4,6 +4,7 @@ from django.views.generic import ListView , DetailView, CreateView
 from .models import Story
 from doggo.models import Doggo
 from .forms import StoryForm
+from doggo.forms import DoggoForm
 
 class StoryList(ListView):
     """
@@ -84,3 +85,14 @@ def StoryCreate(request):
     
     return render(request, 'story_form.html', {'form': form})
 
+def DoggoCreate(request):
+    
+    if request.method == 'POST':
+        form = DoggoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success-url')
+    else:
+        form = DoggoForm()
+    
+    return render(request, 'doggo_form.html', {'form': form})
