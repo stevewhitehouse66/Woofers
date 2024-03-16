@@ -61,26 +61,17 @@ I have applied Moscow pioritisation to these...
 
 #### Initial ERD
 
-![Woofers ERD](images/readme/woofers_project.drawio.png).
+ https://github.com/stevewhitehouse66/Woofers/blob/main/images/readme/woofers_project.drawio.png
+
 
 #### Wireframes
-Wireframe Mobile Landing Page
-![Wireframe Mobile Landing Page](images/readme/landing-page-mobile.png)<br>
+- Wireframe Mobile Landing Page - https://github.com/stevewhitehouse66/Woofers/blob/main/images/readme/landing-page-mobile.png
+- Wireframe Mobile Story Detail Page -https://github.com/stevewhitehouse66/Woofers/blob/main/images/readme/story-detail-page-mobile.png
+- Wireframe Mobile Dog Detail Page - https://github.com/stevewhitehouse66/Woofers/blob/main/images/readme/dog-detail-page-mobile.png
+- Wireframe Desktop Landing Page - https://github.com/stevewhitehouse66/Woofers/blob/main/images/readme/landing-page-med-large-desktop.png
+- Wireframe Desktop story detail Page - https://github.com/stevewhitehouse66/Woofers/blob/main/images/readme/story-detail-page-med-large-desktop.png
+- Wireframe Desktop dog detail Page - https://github.com/stevewhitehouse66/Woofers/blob/main/images/readme/dog-detail-page-med-large-desktop.png
 
-Wireframe Mobile Story Detail Page
-![Wireframe Mobile Story Detail Page](images/readme/story-detail-page-mobile.png)<br>
-
-Wireframe Mobile Dog Detail Page
-![Wireframe Mobile Dog Detail Page](images/readme/dog-detail-page-mobile.png)<br>
-
-Wireframe Desktop Landing Page
-![Wireframe Desktop Landing Page](images/readme/landing-page-med-large-desktop.png)<br>
-
-Wireframe Desktop story detail Page
-![Wireframe Desktop Story Detail Page](images/readme/story-detail-page-med-large-desktop.png)<br>
-
-Wireframe Desktop dog detail Page
-![Wireframe Desktop Dog Detail Page](images/readme/dog-detail-page-med-large-desktop.png)<br>
 ### Setting Up
 
 #### Required Tech Stack:
