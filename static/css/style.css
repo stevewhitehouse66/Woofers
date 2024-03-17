@@ -74,16 +74,20 @@ h4{
 }
 
 
+
+
+.column{
+    width: 100%
+}
+
+/*Header Styles*/
+
 .brand-text{
     font-family: "Open Sans", Roboto, sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
     color: #4A4A4F;
 
-}
-
-.column{
-    width: 100%
 }
 
 /*Story Styles*/
