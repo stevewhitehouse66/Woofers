@@ -7,7 +7,7 @@ from doggo.models import Doggo
 from .forms import StoryForm
 from doggo.forms import DoggoForm
 from django.urls import reverse_lazy
-
+from django import forms
 # List Views
 
 
@@ -105,7 +105,6 @@ class DoggoDetailView(DetailView):
 # Create Views
 
 
-
 def StoryCreate(request):
     """
     Create an instance of :model:`doggo.Doggo`.
@@ -151,11 +150,35 @@ def DoggoCreate(request):
     return render(request, 'doggo_form.html', {'form': form})
 
 
-# Update Views
+# Update Views (Based on ChatGPT suggestion)
 
 
 class StoryUpdateView(UpdateView):
+    """
+    Edit an instance of :model:`story.Story`.
+
+    **Template:**
+    :form:'/story/forms.py
+    :template:`story_form.html`
+    """
     model = Story
     fields = ['title',  'content', 'excerpt']
     template_name = 'story_form.html'
     success_url = reverse_lazy('story')
+
+
+class DoggoUpdateView(UpdateView):
+    """
+    Edit an instance of :model:`doggo.Doggo`.
+
+    **Template:**
+    :form:'/doggo/forms.py
+    :template:`doggo_form.html`
+    """
+    model = Doggo
+    fields = ['name', 'sex', 'breed', 'age', 'location',
+                  'status', 'vet_checked', 'vet_note', 'vet_vaccinated',
+                  'vet_neutered', 'vet_weight', 'temperament', 'training',
+                  'behaviour', 'notes']
+    template_name = 'doggo_form.html'
+    success_url = reverse_lazy('doggos')
