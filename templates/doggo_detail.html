@@ -2,14 +2,8 @@
 {% block content %} 
 {% load static %}
 <!-- doggo_detail.html content starts here -->
-<div class="full-row-container flex-row">
-        <div class="story-image-container">
-            {% if "placeholder" in doggo.profile_image.url %}
-            <img src="{% static 'images/default_doggo2.png' %}" class="doggo-image" alt="{{ doggo.name. }}">
-            {% else %}
-            <img src="{{ doggo.profile_image.url }}" class="doggo-image" alt="{{ doggo.name }}">
-            {% endif %}
-        </div>
+<div class="full-row-container">
+
         <div class= "dog-text-container justify-content-center"> 
             {% if user.is_staff %}
             <div class="staff-links">
@@ -20,7 +14,7 @@
                 </ul>
             </div>
             {% endif %}
-         
+        
         <h1 class="name-text text-uppercase tex-center justify-content-center">Name: {{ doggo.name }}</h1>
         <p> Breed: {{ doggo.breed}}</p>
         <p> Sex: {{ doggo.get_sex_display}}</p>
@@ -35,23 +29,31 @@
         <p class = "text-danger">Detailed Information, Staff Only!</p>
         <p>Location: {{ doggo.location }}</p> 
         <p>Status: {{ doggo.get_status_display}}</p>
-        <p>Vet Checked: {{ doggo.vet_checked }}</p>
-        <p>Vet Notes: {{ doggo.vet_note }}</p>
-        <p>Weight: {{ doggo.vet_weight }} Kg</p>
-        <p>Medication: {{ doggo.vet_medication }}</p>
-        <p>Last Vaccinated: {{ doggo.vet_vaccinated }}</p>
-        <p>Neutered / Spayed: {{ doggo.get_vet_neutered_display }}</p>
         <p>Temperament: {{ doggo.temperament }}</p>
         <p>Training: {{ doggo.training }}</p>
         <p>Behaviour: {{ doggo.behaviour }}</p>
         <p>Last Updated: {{ doggo.updated_on }}</p>
-
-        <hr>
+        <hr class="text-center">
+        <P class="small">Vet Info:</p>
+        <div class="vet-info col-10">
+            <p>Vet Checked: {{ doggo.vet_checked }}</p>
+            <p>Vet Notes: {{ doggo.vet_note }}</p>
+            <p>Medication: {{ doggo.vet_medication }}</p>
+            <p>Last Vaccinated: {{ doggo.vet_vaccinated }}</p>
+            <p>Neutered / Spayed: {{ doggo.get_vet_neutered_display }}</p>
+            <p>Weight: {{ doggo.vet_weight }} Kg</p>    
+        </div>
         {% endif %}
         
         
     </div>
-    
+    <div class="story-image-container">
+        {% if "placeholder" in doggo.profile_image.url %}
+        <img src="{% static 'images/default_doggo2.png' %}" class="large-doggo-image" alt="{{ doggo.name. }}">
+        {% else %}
+        <img src="{{ doggo.profile_image.url }}" class="large-doggo-image" alt="{{ doggo.name }}">
+        {% endif %}
+    </div>
 </div>
 <!-- doggo_detail.html content ends here -->
 {% endblock %}

@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %} 
-<!-- index.html content starts here -->
-
-
-    {% for story in story_list %}
-    <div class="row">
-        <div class="col-12 mt-3">
+<!-- Story_list.html content starts here -->
+{% if user.is_staff %}
+    <div class="add-story-link cols-12 py-1 mx-1 my-1 flex-row justify-content-center">
+        <a href="{% url 'story_add' %}"><i class="fa-regular fa-plus"></i> Add New Story</a></div>
+{% endif %}
+{% for story in story_list %}
+    <div class="row col-12">
         
+        <div class="col-12 mt-3">
             <div class="story-image-container">
                 {% if "placeholder" in story.featured_image.url %}
-                <img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}">
+                <img href="{% url 'story_detail' pk=story.pk %}" src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}">
                 {% else %}
                 <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}">
                 {% endif %}
@@ -18,26 +20,20 @@
             <div class="story-top">
                 <div class="column">
                     <div>
-                     <a href="{% url 'story_detail' pk=story.pk %}">
-                     <div class="title-text">
-                     <h2 class="text-uppercase title-text">{{ story.title }}</h2></div>
+                    <a href="{% url 'story_detail' pk=story.pk %}">
+                    <div class ="story-link-container"><h1 class="text-uppercase story-title">{{ story.title }}</h1>
                     </a>
                     </div>
-             <div class="story-main">
+            <div class="story-main">
             <p class="excerpt">{{ story.excerpt | truncatechars:150}}</p>
-            <p class="created-on">{{ story.created_on}} by {{ story.author }}</p>
+            <p class="small">{{ story.created_on}} by {{ story.author }}</p>
             <p class="pinned">Pinned Post</p>
             </div>
         </div></div>
-        </div>
+        </div></a>
     <br>
     </div>
-
-    {% endfor %}
 </div>
- 
- 
-
-
-<!-- index.html content ends here -->
+    {% endfor %}
+<!-- story_list.html content ends here -->
 {% endblock %}
