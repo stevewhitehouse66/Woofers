@@ -1,10 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, UpdateView
+
 from .models import Story
 from doggo.models import Doggo
 from .forms import StoryForm
 from doggo.forms import DoggoForm
+from django.urls import reverse_lazy
+
+# List Views
 
 
 class StoryList(ListView):
@@ -42,9 +46,12 @@ class DoggoList(ListView):
     template_name = "doggo_list.html"
     context_object_name = "doggo_list"
 
+# Home view, mix of both models
+
 
 def Home(request):
-#View based on chatGPT suggestion for using data from 2 models in a single view
+    # View based on chatGPT suggestion for using data from 2 models in a
+    # single view
     """
     View for the home page, displaying data from both Story and Doggo models.
 
@@ -65,19 +72,48 @@ def Home(request):
     return render(request, 'home.html', {'story_list': story_list,
                                          'doggo_list': doggo_list})
 
+# Detail Views
+
 
 class StoryDetailView(DetailView):
+    """
+    Display an instance of :model:`story.Story`.
+
+    **Context**
+
+    **Template:**
+
+    :template:`story_detail.html`
+    """
     model = Story
     template_name = 'story_detail.html'
 
 
 class DoggoDetailView(DetailView):
+    """
+    Display an instance of :model:`doggo.Doggo`.
+
+    **Context**
+
+    **Template:**
+
+    :template:`doggo_detail.html`
+    """
     model = Doggo
     template_name = 'doggo_detail.html'
 
+# Create Views
+
+
 
 def StoryCreate(request):
-    
+    """
+    Create an instance of :model:`doggo.Doggo`.
+
+    **Template:**
+    :form:'/story/forms.py
+    :template:`story_form.html`
+    """
     if request.method == 'POST':
         form = StoryForm(request.POST, request.FILES)
         if form.is_valid():
@@ -88,11 +124,19 @@ def StoryCreate(request):
             return redirect('/story')
     else:
         form = StoryForm()
-    
+
     return render(request, 'story_form.html', {'form': form})
 
 
+
 def DoggoCreate(request):
+    """
+    Create an instance of :model:`doggo.Doggo`.
+
+    **Template:**
+    :form:'/doggo/forms.py
+    :template:`doggo_form.html`
+    """
     if request.method == 'POST':
         form = DoggoForm(request.POST, request.FILES)
         if form.is_valid():
@@ -103,5 +147,15 @@ def DoggoCreate(request):
             return redirect('/doggo')
     else:
         form = DoggoForm()
-    
+
     return render(request, 'doggo_form.html', {'form': form})
+
+
+# Update Views
+
+
+class StoryUpdateView(UpdateView):
+    model = Story
+    fields = ['title',  'content', 'excerpt']
+    template_name = 'story_form.html'
+    success_url = reverse_lazy('story')

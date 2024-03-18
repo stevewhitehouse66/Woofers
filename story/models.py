@@ -15,7 +15,10 @@ class Story(models.Model):
     Stores a single story entry related to  :model:`auth.User`
     """
     title = models.CharField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="stories")
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="stories")
     featured_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
     excerpt = models.TextField(blank=True)
@@ -23,12 +26,12 @@ class Story(models.Model):
     pinned = models.IntegerField(choices=PINNED, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    
+
     class Meta:
         ordering = ["-created_on"]
 
     def __str__(self):
         return f"Story {self.title} written by {self.author}"
-    
+
     def get_absolute_url(self):
-        return reverse('story:story_list',kwargs={'pk':self.pk})
+        return reverse('story:story_list', kwargs={'pk': self.pk})
