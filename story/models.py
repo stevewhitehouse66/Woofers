@@ -9,6 +9,7 @@ from django.urls import reverse
 STATUS = ((0, "Draft"), (1, "Published"))
 PINNED = ((0, "No"), (1, "Yes"))
 
+
 class Story(models.Model):
     """
     Stores a single story entry related to  :model:`auth.User`
@@ -22,6 +23,7 @@ class Story(models.Model):
     pinned = models.IntegerField(choices=PINNED, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
+    
     class Meta:
         ordering = ["-created_on"]
 
@@ -29,4 +31,4 @@ class Story(models.Model):
         return f"Story {self.title} written by {self.author}"
     
     def get_absolute_url(self):
-        return reverse ('story:story_list',kwargs={'pk':self.pk})
+        return reverse('story:story_list',kwargs={'pk':self.pk})

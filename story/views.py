@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.views.generic import ListView , DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Story
 from doggo.models import Doggo
 from .forms import StoryForm
@@ -26,21 +26,21 @@ class StoryList(ListView):
 
 
 class DoggoList(ListView):
-   """
-   Display a list of :model:`story.Story`
+    """
+    Display a list of :model:`story.Story`
 
-   **Context**
+    **Context**
 
-   ``story``
+    ``story``
        An instance of :model:`story.Story`.
 
-   **Template:**
+    **Template:**
 
-   :template:`story_list.html`
-   """
-   queryset = Doggo.objects.all()
-   template_name = "doggo_list.html"
-   context_object_name = "doggo_list"
+    :template:`story_list.html`
+    """
+    queryset = Doggo.objects.all()
+    template_name = "doggo_list.html"
+    context_object_name = "doggo_list"
 
 
 def Home(request):
@@ -60,13 +60,16 @@ def Home(request):
 
     :template:`home.html`
     """
-    story_list = Story.objects.filter(pinned =1)
+    story_list = Story.objects.filter(pinned=1)
     doggo_list = Doggo.objects.exclude(status=0)
-    return render(request, 'home.html', {'story_list': story_list, 'doggo_list': doggo_list})
+    return render(request, 'home.html', {'story_list': story_list,
+                                         'doggo_list': doggo_list})
+
 
 class StoryDetailView(DetailView):
     model = Story
     template_name = 'story_detail.html'
+
 
 class DoggoDetailView(DetailView):
     model = Doggo
@@ -78,23 +81,27 @@ def StoryCreate(request):
     if request.method == 'POST':
         form = StoryForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            logged_in_user = request.user
+            story_instance = form.save(commit=False)
+            story_instance.author = logged_in_user
+            story_instance.save()
             return redirect('/story')
     else:
         form = StoryForm()
     
     return render(request, 'story_form.html', {'form': form})
 
+
 def DoggoCreate(request):
-    
     if request.method == 'POST':
         form = DoggoForm(request.POST, request.FILES)
         if form.is_valid():
-
-            form.save()
+            logged_in_user = request.user
+            doggo_instance = form.save(commit=False)
+            doggo_instance.added_by = logged_in_user
+            doggo_instance.save()
             return redirect('/doggo')
     else:
         form = DoggoForm()
     
     return render(request, 'doggo_form.html', {'form': form})
-

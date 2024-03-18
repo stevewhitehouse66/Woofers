@@ -20,9 +20,10 @@ body{
     min-height: 100vh;
     background-color: #f5f5f5;
     background: rgb(253,221,172);
-    background: linear-gradient(180deg, rgb(248, 235, 215) 0%, rgb(250, 249, 248) 100%), rgb(248, 235, 215) 0%;
+    background: linear-gradient(270deg, rgb(250, 249, 248) 0%, rgb(248, 235, 215) 50%, rgb(250, 249, 248) 100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    margin-bottom: 50px;
 }
 
 
@@ -44,9 +45,17 @@ h4{
     display: flex;
     flex-direction: column;
 }
-.story-container{}
 
-.doggo-container{}
+.full-row-container{
+    display:flex;
+    flex-direction: row;
+    padding: 10px;
+    width: 96%;
+    box-shadow:  0 1px 1px #4A4A4F;
+    margin: auto;
+    border-radius: 10px;
+    background: linear-gradient(144deg, rgb(248, 235, 215) 0%, rgb(250, 249, 248) 100%);
+}
 
 .row{
     padding: 5px;
@@ -58,11 +67,13 @@ h4{
 }
 #navbar-nav{
     text-align: right;
-    background: rgb(248, 235, 215)
+    background: linear-gradient(144deg, rgb(248, 235, 215) 0%, rgb(250, 249, 248) 100%);
+    text-transform: uppercase;
 }
 #navbar-text{
     text-align: end;
-    
+    text-transform: uppercase;
+    background: linear-gradient(144deg, rgb(248, 235, 215) 0%, rgb(250, 249, 248) 100%);
 }
 .dropdown-menu{
 
@@ -73,7 +84,13 @@ h4{
     background: rgb(248, 235, 215)
 }
 
-
+.staff-links{
+    width: fit-content;
+    border-radius: 10px;
+    Margin: auto;
+    margin-top: 5px;
+    background: linear-gradient(270deg, rgb(248, 235, 215) 0%, rgb(250, 249, 248) 100%);
+}
 
 
 .column{
@@ -81,29 +98,63 @@ h4{
 }
 
 /*Header Styles*/
-
+header{
+    background: linear-gradient(270deg, rgb(250, 249, 248) 0%, rgb(248, 235, 215) 50%, rgb(250, 249, 248) 100%);
+}
 .brand-text{
     font-family: "Open Sans", Roboto, sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
+    background-color: lightblue;
+    font-size: 1.6rem;
+    font-weight: 600;
     color: #4A4A4F;
 
 }
+/* Home Page Styles*/
 
+.sub-title {
+    font-family: "Open Sans", Roboto, sans-serif;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #4A4A4F;
+}
 /*Story Styles*/
 
-.title-text{
+.add-story-link{
+    margin: auto;
+    width: fit-content;
+}
+.story-text-container{
+    width: 100%;
+}
+.story-title-container{
+    flex-direction: column;
+    text-align: center;
     font-family: "Open Sans", Roboto, sans-serif;
     font-size: medium;
     margin: auto;
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.story-link-container{
+    font-family: "Open Sans", Roboto, sans-serif;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 15px;
+    background: linear-gradient(144deg, rgb(248, 235, 215) 0%, rgb(250, 249, 248) 100%);
+}
+.story-title{
+    font-family: "Open Sans", Roboto, sans-serif;
+    font-size: large;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 .story-top{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
-    margin: auto;
+    margin: 5px;
     text-align: center;
     
 
@@ -116,10 +167,17 @@ h4{
     box-shadow:  0 2px 2px #4A4A4F;
 
 }
+.large-story-image{
+    max-width: 300px;
+    height: auto;
+    border-radius: 10%;
+    margin:5px;
+    box-shadow:  0 2px 2px #4A4A4F;
+
+}
 .story-main{
-    
-    
     width: 100%;
+    justify-content: left;
     font-family: Roboto;
     text-align: left;
     padding-left: 10px;
@@ -155,16 +213,32 @@ h4{
     padding: 0;
     padding-left: 10px;
 }
+.dog-text-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
 /*Footer Styles*/
 
 .footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     padding: 0;
-    margin: 0;
     margin-inline: auto;
+    margin-bottom: 6px;
     font-size: medium;
 }
-
+.footer-text{
+    margin: 0;
+    padding: 0;
+}
+.socials-container {
+    margin: auto;
+    display: inline-flex;
+    flex-direction: row;
+}
 /* Auth Form Styles*/
 
 .btn-signup,
@@ -204,7 +278,7 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-  }
+}
 /*Media Queries*/
 
 @media (min-width: 480px) {
@@ -225,4 +299,4 @@ ul {
         height: 120px;
         padding: 10px;
     }
-  }
+}
