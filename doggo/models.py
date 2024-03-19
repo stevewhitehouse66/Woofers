@@ -19,7 +19,7 @@ class Doggo(models.Model):
     """
     Stores a single dog profile entry related to  :model:`auth.User`
     """
-    
+
     name = models.CharField(max_length=100)
     sex = models.IntegerField(choices=SEX, default=0)
     breed = models.CharField(max_length=100)
@@ -46,6 +46,6 @@ class Doggo(models.Model):
 
     class Meta:
         ordering = ["-added_on"]
-    
+
     def __str__(self):
         return f"{self.name}.  Breed - {self.breed}. Added by {self.added_by}"

@@ -192,6 +192,12 @@ header{
 
 /*Dog Profile Styles*/
 
+.add-doggo-link{
+    margin: auto;
+    width: fit-content;
+}
+
+
 .name-text{
     font-family: "Open Sans", Roboto, sans-serif;
     font-size: medium;
@@ -301,7 +307,7 @@ ul {
 }
 /*Media Queries*/
 
-@media (min-width: 480px) {
+@media (max-width: 480px) {
     .home-container{
         height: 100%;
         padding: 10px;

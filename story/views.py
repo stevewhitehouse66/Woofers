@@ -159,11 +159,11 @@ class StoryUpdateView(UpdateView):
 
     **Template:**
     :form:'/story/forms.py
-    :template:`story_form.html`
+    :template:`story_edit_form.html`
     """
     model = Story
     fields = ['title',  'content', 'excerpt']
-    template_name = 'story_form.html'
+    template_name = 'story_edit_form.html'
     success_url = reverse_lazy('story')
 
 
@@ -173,12 +173,12 @@ class DoggoUpdateView(UpdateView):
 
     **Template:**
     :form:'/doggo/forms.py
-    :template:`doggo_form.html`
+    :template:`doggo_edit_form.html`
     """
     model = Doggo
     fields = ['name', 'sex', 'breed', 'age', 'location',
                   'status', 'vet_checked', 'vet_note', 'vet_vaccinated',
                   'vet_neutered', 'vet_weight', 'temperament', 'training',
                   'behaviour', 'notes']
-    template_name = 'doggo_form.html'
+    template_name = 'doggo_edit_form.html'
     success_url = reverse_lazy('doggos')

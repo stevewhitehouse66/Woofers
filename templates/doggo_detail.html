@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %} 
 {% load static %}
+{% url 'doggo_add' as add_url %}
+{% url 'doggo_edit' as edit_url %}
+{% url 'delete' as delete_url %}
 <!-- doggo_detail.html content starts here -->
 <div class="full-row-container">
 
@@ -9,7 +12,7 @@
             <div class="staff-links">
                 <ul class=" list-group flex-row staff-links justify-content-center">
                     <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'doggo_add' %}"><i class="fa-regular fa-plus"></i> Add New</a></li>
-                    <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'edit'%}"><i class="fa-regular fa-edit"></i> Edit</a></li>
+                    <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'doggo_edit' doggo.pk %}"><i class="fa-regular fa-edit"></i> Edit</a></li>
                     <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'delete'%}"><i class="fa-regular fa-trash-can text-danger"></i> Delete</a></li>
                 </ul>
             </div>
