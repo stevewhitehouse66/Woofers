@@ -8,15 +8,7 @@
 <div class="full-row-container">
 
         <div class= "dog-text-container justify-content-center"> 
-            {% if user.is_staff %}
-            <div class="staff-links">
-                <ul class=" list-group flex-row staff-links justify-content-center">
-                    <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'doggo_add' %}"><i class="fa-regular fa-plus"></i> Add New</a></li>
-                    <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'doggo_edit' doggo.pk %}"><i class="fa-regular fa-edit"></i> Edit</a></li>
-                    <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'delete'%}"><i class="fa-regular fa-trash-can text-danger"></i> Delete</a></li>
-                </ul>
-            </div>
-            {% endif %}
+
         
         <h1 class="name-text text-uppercase tex-center justify-content-center">Name: {{ doggo.name }}</h1>
         <p> Breed: {{ doggo.breed}}</p>
@@ -57,6 +49,15 @@
         <img src="{{ doggo.profile_image.url }}" class="large-doggo-image" alt="{{ doggo.name }}">
         {% endif %}
     </div>
+    {% if user.is_staff %}
+    <div class="staff-links">
+        <ul class=" list-group flex-row staff-links justify-content-center">
+            <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'doggo_add' %}"><i class="fa-regular fa-plus"></i> Add New</a></li>
+            <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'doggo_edit' doggo.pk %}"><i class="fa-regular fa-edit"></i> Edit</a></li>
+            <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'delete'%}"><i class="fa-regular fa-trash-can text-danger"></i> Delete</a></li>
+        </ul>
+    </div>
+    {% endif %}
 </div>
 <!-- doggo_detail.html content ends here -->
 {% endblock %}

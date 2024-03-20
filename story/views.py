@@ -67,9 +67,11 @@ def Home(request):
 
     :template:`home.html`
     """
-    story_list = Story.objects.filter(pinned=1)
+    story_list_pinned = Story.objects.filter(pinned=1)
+    story_list_published = Story.objects.filter(status=1, pinned=0)
     doggo_list = Doggo.objects.exclude(status=0)
-    return render(request, 'home.html', {'story_list': story_list,
+    return render(request, 'home.html', {'story_list_pinned': story_list_pinned,
+                                         'story_list_published': story_list_published,
                                          'doggo_list': doggo_list})
 
 # Detail Views
