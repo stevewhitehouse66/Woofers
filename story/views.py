@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.views.generic import ListView, DetailView, UpdateView
-
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView
+from django.contrib.messages.views import SuccessMessageMixin
 from .models import Story
 from doggo.models import Doggo
 from .forms import StoryForm
@@ -120,12 +120,15 @@ def StoryCreate(request):
             story_instance = form.save(commit=False)
             story_instance.author = logged_in_user
             story_instance.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'New Story Saved'
+                )
             return redirect('/story')
     else:
         form = StoryForm()
 
     return render(request, 'story_form.html', {'form': form})
-
 
 
 def DoggoCreate(request):
@@ -143,6 +146,10 @@ def DoggoCreate(request):
             doggo_instance = form.save(commit=False)
             doggo_instance.added_by = logged_in_user
             doggo_instance.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'New Dog Profile Submitted'
+                )
             return redirect('/doggo')
     else:
         form = DoggoForm()
@@ -153,7 +160,7 @@ def DoggoCreate(request):
 # Update Views (Based on ChatGPT suggestion)
 
 
-class StoryUpdateView(UpdateView):
+class StoryUpdateView(SuccessMessageMixin, UpdateView):
     """
     Edit an instance of :model:`story.Story`.
 
@@ -166,8 +173,15 @@ class StoryUpdateView(UpdateView):
     template_name = 'story_edit_form.html'
     success_url = reverse_lazy('story')
 
+    def get_success_message(self, cleaned_data):
+        return "Doggo details updated successfully."
 
-class DoggoUpdateView(UpdateView):
+    def form_valid(self, form):
+        messages.success(self.request, self.success_message)
+        return super().form_valid(form)
+
+
+class DoggoUpdateView(SuccessMessageMixin, UpdateView):
     """
     Edit an instance of :model:`doggo.Doggo`.
 
@@ -177,8 +191,32 @@ class DoggoUpdateView(UpdateView):
     """
     model = Doggo
     fields = ['name', 'sex', 'breed', 'age', 'location',
-                  'status', 'vet_checked', 'vet_note', 'vet_vaccinated',
-                  'vet_neutered', 'vet_weight', 'temperament', 'training',
-                  'behaviour', 'notes']
+              'status', 'vet_checked', 'vet_note', 'vet_vaccinated',
+              'vet_neutered', 'vet_weight', 'temperament', 'training',
+              'behaviour', 'notes']
     template_name = 'doggo_edit_form.html'
     success_url = reverse_lazy('doggos')
+
+    def get_success_message(self, cleaned_data):
+        return "Doggo details updated successfully."
+
+    def form_valid(self, form):
+        messages.success(self.request, self.success_message)
+        return super().form_valid(form)
+
+
+class StoryDeleteView(SuccessMessageMixin, DeleteView):
+    """
+    Delete an individual story.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`story.Story`.
+    """
+    model = Story
+    template_name = 'confirm_delete_form.html'
+    success_url = reverse_lazy('story')
+    
+    def get_success_message(self, cleaned_data):
+        return "Story Deleted successfully."

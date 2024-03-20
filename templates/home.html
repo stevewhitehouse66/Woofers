@@ -11,9 +11,9 @@
             <div class="col-12 mt-3 flex-row">
                 <div class="story-image-container">
                     {% if "placeholder" in story.featured_image.url %}
-                    <img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}">
+                    <img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}" href="{% url 'story_detail' pk=story.pk %}">
                     {% else %}
-                    <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}">
+                    <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}" href="{% url 'story_detail' pk=story.pk %}">
                     {% endif %}
                 </div>
                 <div class="story-text-container justify-content-center">
@@ -37,32 +37,31 @@
         {% endfor %}
     </div>
 <!-- Display Dog Profiles most recent first -->
-<div class="doggo-container">
+    <div class="doggo-container">
     {% for doggo in doggo_list %}
     <div class="row">
         <div class="col-12 mt-3">
         <a href="{% url 'doggo_detail' pk=doggo.pk %}">
             <div class="profile-image-container">
             {% if "placeholder" in doggo.profile_image.url %}
-            <img src="{% static 'images/default_doggo2.png' %}" class="doggo-image" alt="{{ doggo.name }}">
+            <img src="{% static 'images/default_doggo2.png' %}" class="doggo-image" alt="{{ doggo.name }}" href="{% url 'doggo_detail' pk=doggo.pk %}">
             {% else %}
-            <img src="{{ doggo.profile_image.url }}" class="doggo-image" alt="{{ doggo.name }}">
+            <img src="{{ doggo.profile_image.url }}" class="doggo-image" alt="{{ doggo.name }}" href="{% url 'doggo_detail' pk=doggo.pk %}">
             {% endif %}
-            </div>
-            <h2 class="name-text">{{ doggo.name }}</h2>
-    <p> Breed: {{ doggo.breed}}</p>
-    <p> Age: {{ doggo.age }}</p>
-    </a>
-    <hr>
-    <div class="doggo-main">
-        <p> About: {{ doggo.notes}}</p>
-    </div>
-    <p> Added on: {{ doggo.added_on}}</p>
-    </div>
         </div>
-    
-    {% endfor %}
-</div>
+        <h2 class="name-text">{{ doggo.name }}</h2>
+        <p> Breed: {{ doggo.breed}}</p>
+        <p> Age: {{ doggo.age }}</p>
+        </a>
+        <hr>
+        <div class="doggo-main">
+        <p> About: {{ doggo.notes}}</p>
+        </div>
+        <p> Added on: {{ doggo.added_on}}</p>
+        </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 <!-- home.html content ends here -->
 {% endblock %}

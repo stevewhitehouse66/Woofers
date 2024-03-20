@@ -6,15 +6,16 @@
     <div class="add-story-link cols-12 py-1 mx-1 my-1 flex-row justify-content-center">
         <a href="{% url 'story_add' %}"><i class="fa-regular fa-plus"></i> Add New Story</a></div>
 {% endif %}
+<div class="list-container">
 {% for story in story_list %}
     <div class="row col-12">
         
         <div class="col-12 mt-3">
             <div class="story-image-container">
                 {% if "placeholder" in story.featured_image.url %}
-                <img href="{% url 'story_detail' pk=story.pk %}" src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}">
+                <a href="{% url 'story_detail' pk=story.pk %}"><img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}"></a>
                 {% else %}
-                <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}">
+                <a href="{% url 'story_detail' pk=story.pk %}"><img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}"></a>
                 {% endif %}
             </div>
             <div class="story-top">
@@ -35,5 +36,6 @@
     </div>
 </div>
     {% endfor %}
+</div>
 <!-- story_list.html content ends here -->
 {% endblock %}

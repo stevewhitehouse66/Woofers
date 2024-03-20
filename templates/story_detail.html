@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 {% url 'story_add' as add_url %}
 {% url 'story_edit' as edit_url %}
-{% url 'delete' as delete_url %}
+{% url 'story_delete' as delete_url %}
 {% block content %} 
 <!-- story_detail.html content starts here -->
 <div class="full-row-container">
@@ -20,7 +20,7 @@
                     <ul class=" list-group flex-row staff-links justify-content-center">
                         <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'story_add' %}"><i class="fa-regular fa-plus"></i> Add New</a></li>
                         <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'story_edit' story.pk %}"><i class="fa-regular fa-edit"></i> Edit</a></li>
-                        <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'delete'%}"><i class="fa-regular fa-trash-can text-danger"></i> Delete</a></li>
+                        <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'story_delete' story.pk %}"><i class="fa-regular fa-trash-can text-danger"></i> Delete</a></li>
                     </ul>
                 </div>
             {% endif %}    

@@ -18,7 +18,7 @@ urlpatterns = [
     # CRUD for Stories
     path('story/add/', views.StoryCreate, name='story_add'),
     path('story/<int:pk>/update/', views.StoryUpdateView.as_view(), name='story_edit'),
-    path('delete/', views.DoggoList.as_view(), name='delete'),
+    path('story/<int:pk>delete/', views.StoryDeleteView.as_view(), name='story_delete'),
 
     # CRUD for Doggos
     path('add/', views.DoggoCreate, name='doggo_add'),

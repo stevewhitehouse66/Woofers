@@ -8,6 +8,7 @@
         <a href="{% url 'doggo_add' %}"><i class="fa-regular fa-plus"></i> Add New Dog Profile</a></div>
 {% endif %}
 <h4 class="sub-title text-center">Our Dogs</h4>
+<div class="list-container">
 {% for doggo in doggo_list %}
 <div class="row">
     <div class="col-12 mt-3">
@@ -17,7 +18,7 @@
         {% if "placeholder" in doggo.profile_image.url %}
         <img src="{% static 'images/default_doggo2.png' %}" class="doggo-image" alt="{{ doggo.name. }}">
         {% else %}
-        <img src="{{ doggo.profile_image.url }}" class="doggo-image" alt="{{ doggo.name }}">
+        <img src="{{ doggo.profile_image.url }}" class="doggo-image" alt="{{ doggo.name }}" href="{% url 'doggo_detail' pk=doggo.pk %}">
         {% endif %}
         </div>
     </div>
