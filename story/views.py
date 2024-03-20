@@ -171,7 +171,7 @@ class StoryUpdateView(SuccessMessageMixin, UpdateView):
     :template:`story_edit_form.html`
     """
     model = Story
-    fields = ['title',  'content', 'excerpt']
+    fields = ['title',  'content', 'excerpt', 'status', 'pinned']
     template_name = 'story_edit_form.html'
     success_url = reverse_lazy('story')
 
