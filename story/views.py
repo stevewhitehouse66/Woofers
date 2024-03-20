@@ -7,7 +7,15 @@ from doggo.models import Doggo
 from .forms import StoryForm
 from doggo.forms import DoggoForm
 from django.urls import reverse_lazy
-from django import forms
+
+
+#Contact View
+
+
+def ContactView(request):
+    return render(request, 'contact.html')
+
+
 # List Views
 
 
@@ -159,7 +167,7 @@ def DoggoCreate(request):
     return render(request, 'doggo_form.html', {'form': form})
 
 
-# Update Views (Based on ChatGPT suggestion)
+# Update Views (Based on ChatGPT suggestion to stop message double firing)
 
 
 class StoryUpdateView(SuccessMessageMixin, UpdateView):

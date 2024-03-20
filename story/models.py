@@ -35,3 +35,4 @@ class Story(models.Model):
 
     def get_absolute_url(self):
         return reverse('story:story_list', kwargs={'pk': self.pk})
+

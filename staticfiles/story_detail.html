@@ -6,7 +6,13 @@
 {% url 'story_delete' as delete_url %}
 {% block content %} 
 <!-- story_detail.html content starts here -->
-<div class="full-row-container">
+<div class="story-full-row-container">                <div class="staff-links">
+                    <ul class=" list-group flex-row staff-links justify-content-center">
+                        <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'story_add' %}"><i class="fa-regular fa-plus"></i> Add New</a></li>
+                        <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'story_edit' story.pk %}"><i class="fa-regular fa-edit"></i> Edit</a></li>
+                        <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'story_delete' story.pk %}"><i class="fa-regular fa-trash-can text-danger"></i> Delete</a></li>
+                    </ul>
+                </div>
     <div class="story-image-container">
         {% if "placeholder" in story.featured_image.url %}
             <img src="{% static 'images/default_doggo.png' %}" class="large-story-image" alt="{{ story.title }}">
@@ -16,20 +22,15 @@
     </div>
         <div class="story-text-container justify-content-center">
             {% if user.is_staff %}
-                <div class="staff-links">
-                    <ul class=" list-group flex-row staff-links justify-content-center">
-                        <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'story_add' %}"><i class="fa-regular fa-plus"></i> Add New</a></li>
-                        <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'story_edit' story.pk %}"><i class="fa-regular fa-edit"></i> Edit</a></li>
-                        <li class="px-1 py-1 mx-1 my-1"><a  href="{% url 'story_delete' story.pk %}"><i class="fa-regular fa-trash-can text-danger"></i> Delete</a></li>
-                    </ul>
-                </div>
+
             {% endif %}    
-                <div class ="story-title-container"><h1 class="text-uppercase story-title">{{ story.title }}</h1>
+            <div class ="story-title-container"><h1 class="text-uppercase story-title">{{ story.title }}</h1>
                 
                 <div class="story-main"> <p>{{ story.content | safe }}</p></div>
             </div>
             <br>
-        </div> 
+        </div>
+    
 </div>
 <!-- story_detail.html content ends here -->
 {% endblock %}

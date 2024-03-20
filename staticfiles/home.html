@@ -11,9 +11,9 @@
             <div class="col-12 mt-3 flex-row">
                 <div class="story-image-container">
                     {% if "placeholder" in story.featured_image.url %}
-                    <img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}" href="{% url 'story_detail' pk=story.pk %}">
+                    <a><img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}" href="{% url 'story_detail' pk=story.pk %}"></a>
                     {% else %}
-                    <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}" href="{% url 'story_detail' pk=story.pk %}">
+                    <a><img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}" href="{% url 'story_detail' pk=story.pk %}"></a>
                     {% endif %}
                 </div>
                 <div class="story-text-container justify-content-center">
@@ -21,13 +21,13 @@
                         <div>
                         <a href="{% url 'story_detail' pk=story.pk %}">
                         <div class="title-text">
-                        <h2 class="text-uppercase title-text">{{ story.title }}</h2></div>
+                        <h1 class="text-uppercase title-text">{{ story.title }}</h1></div>
                         </a>
                         </div>
                         <div class="story-main">
                         <p class="excerpt">{{ story.excerpt | truncatechars:150}}</p>
-                        <p class="created-on">{{ story.created_on}} by {{ story.author }}</p>
-                        <p class="pinned">Pinned Post</p>
+                        <p class="created-on small">{{ story.created_on}} by {{ story.author }}</p>
+                        <p class="pinned small">Pinned Story</p>
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
         <br>
         </div>
         {% endfor %}
-        <!-- Display "Published" Stories most recent first -->
+<!-- Display "Published" Stories most recent first -->
         {% for story in story_list_published %}
         <div class="row">
             <div class="col-12 mt-3 flex-row">
@@ -51,12 +51,12 @@
                         <div>
                         <a href="{% url 'story_detail' pk=story.pk %}">
                         <div class="title-text">
-                        <h2 class="text-uppercase title-text">{{ story.title }}</h2></div>
+                        <h1 class="text-uppercase title-text">{{ story.title }}</h1></div>
                         </a>
                         </div>
                         <div class="story-main">
-                        <p class="excerpt">{{ story.excerpt | truncatechars:150}}</p>
-                        <p class="created-on">{{ story.created_on}} by {{ story.author }}</p>
+                        <p class="excerpt small">{{ story.excerpt | truncatechars:150}}</p>
+                        <p class="created-on small">{{ story.created_on}} by {{ story.author }}</p>
                         </div>
                     </div>
                 </div>
@@ -70,15 +70,15 @@
     {% for doggo in doggo_list %}
     <div class="row">
         <div class="col-12 mt-3">
-        <a href="{% url 'doggo_detail' pk=doggo.pk %}">
-            <div class="profile-image-container">
+            <a href="{% url 'doggo_detail' pk=doggo.pk %}">
+            <div class="home-profile-image-container">
             {% if "placeholder" in doggo.profile_image.url %}
-            <img src="{% static 'images/default_doggo2.png' %}" class="doggo-image" alt="{{ doggo.name }}" href="{% url 'doggo_detail' pk=doggo.pk %}">
+            <a href="{% url 'doggo_detail' pk=doggo.pk %}"><img src="{% static 'images/default_doggo2.png' %}" class="home-profile-image" alt="{{ doggo.name }}" ></a>
             {% else %}
-            <img src="{{ doggo.profile_image.url }}" class="doggo-image" alt="{{ doggo.name }}" href="{% url 'doggo_detail' pk=doggo.pk %}">
+            <a href="{% url 'doggo_detail' pk=doggo.pk %}"><img src="{{ doggo.profile_image.url }}" class="home-profile-image" alt="{{ doggo.name }}" ></a>
             {% endif %}
-        </div>
-        <h2 class="name-text">{{ doggo.name }}</h2>
+            </div>
+        <h1 class="name-text">{{ doggo.name }}</h1>
         <p> Breed: {{ doggo.breed}}</p>
         <p> Age: {{ doggo.age }}</p>
         </a>
@@ -86,9 +86,9 @@
         <div class="doggo-main">
         <p> About: {{ doggo.notes}}</p>
         </div>
-        <p> Added on: {{ doggo.added_on}}</p>
+        <p class ="small"> Added on: {{ doggo.added_on}}</p>
         </div>
-        </div>
+    </div>
         {% endfor %}
     </div>
 </div>

@@ -9,7 +9,10 @@
         {% csrf_token %}
         {{ form | crispy }}
         <button id="submitButton" type="submit"
-              class="btn btn-signup btn-lg">Submit</button>
+              class="btn btn-signup btn-lg mb-2">Submit</button>
+              <a class="btn btn-success btn-lg mb-2" href="{% url 'home' %}" role="button"
+        >Cancel</a
+      >
     </form>
 </div>
     {% endblock %}

@@ -4,6 +4,7 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.Home, name='home'),
+    path('contact/', views.ContactView, name='contact'),
     path(
         'story_detail/<int:pk>/',
         views.StoryDetailView.as_view(),
