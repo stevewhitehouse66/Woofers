@@ -23,6 +23,6 @@ urlpatterns = [
     # CRUD for Doggos
     path('add/', views.DoggoCreate, name='doggo_add'),
     path('doggo/<int:pk>/update/', views.DoggoUpdateView.as_view(), name='doggo_edit'),
-    path('delete/', views.DoggoList.as_view(), name='delete'),
+    path('doggo/<int:pk>/delete/', views.DoggoDeleteView.as_view(), name='doggo_delete'),
 
 ]

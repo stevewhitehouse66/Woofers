@@ -222,3 +222,20 @@ class StoryDeleteView(SuccessMessageMixin, DeleteView):
     
     def get_success_message(self, cleaned_data):
         return "Story Deleted successfully."
+
+
+class DoggoDeleteView(SuccessMessageMixin, DeleteView):
+    """
+    Delete an individual dog profile.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`doggo.Doggo`.
+    """
+    model = Doggo
+    template_name = 'confirm_delete_form.html'
+    success_url = reverse_lazy('doggos')
+    
+    def get_success_message(self, cleaned_data):
+        return "Dog Profile Deleted successfully."
