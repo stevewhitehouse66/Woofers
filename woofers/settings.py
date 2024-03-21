@@ -37,8 +37,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get("DEBUG", False))
 
-ALLOWED_HOSTS = ['.gitpod.io','.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = ['https://8000-stevewhitehouse-woofers-thw047m9ung.ws-eu110.gitpod.io','https://*.127.0.0.1']
+ALLOWED_HOSTS = ['.gitpod.io', '.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://8000-stevewhitehouse-woofers-thw047m9ung.ws-eu110.gitpod.io', 'https://*.127.0.0.1']
 
 # Application definition
 
@@ -76,8 +76,7 @@ cloudinary.config(
     cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
     api_key=os.environ.get('CLOUDINARY_API_KEY'),
     api_secret=os.environ.get('CLOUDINARY_API_SECRET'),
-    secure = True,
-
+    secure=True,
     )
 
 
@@ -91,6 +90,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
+
 ]
 
 ROOT_URLCONF = 'woofers.urls'
@@ -112,17 +112,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'woofers.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-#DATABASES = {
- #   'default': {
-  #      'ENGINE': 'django.db.backends.sqlite3',
-   #     'NAME': BASE_DIR / 'db.sqlite3',
-    #}
-#}
 
 
 DATABASES = {
@@ -164,8 +153,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS= [os.path.join(BASE_DIR,'templates'),
-os.path.join(BASE_DIR, 'static'),]
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'templates'),
+                    os.path.join(BASE_DIR, 'static'),]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
