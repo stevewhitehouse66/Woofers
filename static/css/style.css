@@ -129,6 +129,7 @@ main {
 }
 
 /*Header Styles*/
+
 header {
   background: linear-gradient(90deg, #d9e7ff 0%, #e3ffe7 50%, #d9e7ff 100%);
 }
@@ -139,7 +140,9 @@ header {
   font-weight: 600;
   color: #4a4a4f;
 }
+
 /* Home Page Styles*/
+
 .home-container {
   height: 100vh;
   width: 96%;
@@ -167,7 +170,9 @@ header {
   max-width: 100%;
   height: auto;
 }
+
 /*Story Styles*/
+
 .story-full-row-container {
   display: flex;
   flex-direction: column;
@@ -392,9 +397,57 @@ ul {
       border-radius: 50px;
       margin: auto;
 }
+/*Contact Styles*/
 
+.contact-container{
+
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: fit-content;
+  box-shadow: 0 1px 1px #4a4a4f;
+  margin: auto;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    rgb(230, 230, 235) 0%,
+    rgb(250, 250, 245) 100%
+  );
+}
+
+.contact-title-container{
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.middle-container{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.address-container{
+  padding: 5px;
+}
+
+.map-container{
+  margin: auto;
+  box-shadow: 0 1px 1px #4a4a4f;
+}
+.buttons-container{
+  margin: auto;
+}
+
+.btn{
+height: 40px;
+}
 /*Media Queries*/
 
+@media (max-width: 320px){
+.buttons-container{
+  align-content: center;
+  margin: auto;
+  flex-direction: column;
+}}
 @media (max-width: 479px){
   .story-full-row-container {
     flex-direction: column;

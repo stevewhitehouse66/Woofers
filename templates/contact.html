@@ -3,26 +3,28 @@
 {% url 'home' as home_url %}
 {% block content %}
 <!--Start contact.html Content-->
-<div class="full-row-container">
-<div class="title-container">
-    <h1>Contact Us</h1>
-<div class="address-container">
-    <p>Address:</p>
-    <p>1, Some Road</p>
-    <p>Halesowen</p>
-    <p>West Midlands</p>
-    <p>B623FE</p>
-<div class="phone-container">
-    <p>Phone Number:</p>
-    <p>01234567890:</p>
-<div class="email-container">
-    <p><a href="mailto:someone@example.com">Send email</a></p>
-</div>
+<div class="contact-container">
+<div class="contact-title-container">
+    <h1 class="text-uppercase">Contact Us</h1></div>
+    <div class="middle-container">
+        <div class="address-container">
+            <p class="text-uppercase small">1, Some Road, 
+                Halesowen,
+                West Midlands,
+                B623FE
+            </p>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1022.3737369471876!2d-2.0514380010121593!3d52.44964876963253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487091213738e4cd%3A0x44c6ec07eb94ee28!2sHalesowen!5e0!3m2!1sen!2suk!4v1711021742670!5m2!1sen!2suk" width="280" height="210" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>   
+    <div class="buttons-container">
+        <a class="btn btn-success mt-4 m-4 ml-4 " href="tel:01234567890" role="button"><i class="fa-solid fa-phone"></i> 01234567890</a>
+        <a class="btn btn-success mt-4 m-4 ml-4 " href="mailto:someone@example.com" role="button"><i class="fa-solid fa-envelope-open"></i> Woofers@mail.com</a>
+      </div>
 
-</div>
-
-</div>    
-</div>    
+ 
+  
 </div>
 <!--End contact.html Content-->
 {% endblock %}
