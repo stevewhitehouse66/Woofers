@@ -97,7 +97,6 @@ main {
 }
 #navbar-nav {
   text-align: right;
-
   text-transform: uppercase;
 }
 
@@ -106,6 +105,8 @@ main {
   align-items: center;
   color: var(--current-text);
   background-color: transparent;
+  cursor: pointer;
+  margin: auto;
 }
 .mode-switch{
 
@@ -339,6 +340,7 @@ header {
 .footer-text {
   margin: 0;
   padding: 0;
+  color: var(--current-text);
 }
 .socials-container {
   margin: auto;
@@ -455,12 +457,6 @@ height: 40px;
   align-content: center;
   margin: auto;
   flex-direction: column;
-}
-#call-button::after {
-  content: "";
-}
-#mail-button::after {
-  content: "";
 }
 }
 @media (max-width: 479px){

@@ -41,17 +41,16 @@
 <body class="d-flex flex-column main-bg">
     <header>
         <!-- Navigation -->
-        <!-- Functionaliy copied and modified from Hackathon project "ALLs WELL" -->
+        <!-- Functionaliy copied and midified from Hackathon project "ALLs WELL" -->
 
         <nav class="navbar navbar-expand-lg navbar-light pr-2">
-            <div class="container-fluid">
-                <a href="{% url 'home' %}"><span class="brand-text">
-                        <h1><i class="fas fa-paw pt-2"></i> WOOmFERS</h1>
-                    </span></a>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
-                      </div>
+            <div  class="container-fluid">
+                <a href="{% url 'home' %}"><div class="brand-text">
+                        <h1><i class="fas fa-paw pt-2"></i> WOOFERS</h1>
+                    </div></a>
+                    <div class="mode-switch-container" onclick="flipState()">
+                        <i class="fa-solid fa-lightbulb"></i></div>
+</div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -60,24 +59,24 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 dropdown-menu dropdown-menu-end"
                         style="right: 0; left: auto">
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase {% if request.path == home_url %}active{% endif %}"
+                            <a class="nav-link {% if request.path == home_url %}active{% endif %}"
                                 aria-current="page" href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase {% if request.path == doggo_url %}active{% endif %}"
+                            <a class="nav-link {% if request.path == doggo_url %}active{% endif %}"
                                 aria-current="page" href="{% url 'doggos' %}">Dogs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase {% if request.path == story_url %}active{% endif %}"
+                            <a class="nav-link {% if request.path == story_url %}active{% endif %}"
                                 aria-current="page" href="{% url 'story' %}">Stories</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase {% if request.path == logout_url %}active{% endif %}"
+                            <a class="nav-link {% if request.path == contact_url %}active{% endif %}"
                                 aria-current="page" href="{% url 'contact' %}">Contact</a>
                             </li>
                                 {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase {% if request.path == logout_url %}active{% endif %}"
+                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
                                 aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         {% else %}
@@ -93,10 +92,8 @@
                     </ul>
                 </div>
             </div>
-           
         </nav>
     </header>
-   
     <!-- display messages -->
     <!-- Functionaliy copied from Hackathon project "ALLs WELL"-->
     <div class="container">
@@ -121,7 +118,7 @@
 
     <!-- Footer -->
     <footer class="footer text-center px-5">
-        <p class="text-black footer-text">2024 Woofers Dog Rescue</p>
+        <p class="footer-text">2024 Woofers Dog Rescue</p>
         <div class="socials-container">
             <ul class="social-icons list-group flex-row">
                 <li class="px-1">
@@ -147,11 +144,8 @@
             </ul>
         </div>
     </footer>
-
+    <script src="{% static 'js/mode_switcher.js' %}"></script>
 </body>
-<!-- Mode Switcher JS Link -->
-<script src="{% static 'js/mode_switcher.js' %}"></script>
-
 <!-- Font Awesome Link -->
 <script src="https://kit.fontawesome.com/f382a4fd20.js" crossorigin="anonymous"></script>
 
@@ -159,7 +153,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
 </script>
-
-
 
 </html>
