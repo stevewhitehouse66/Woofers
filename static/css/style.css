@@ -100,19 +100,31 @@ main {
 
   text-transform: uppercase;
 }
+
 .mode-switch-container{
   display:flexbox;
   align-items: center;
+  color: var(--current-text);
+  background-color: transparent;
+}
+.mode-switch{
+
+  color: var(--current-text);
+  background-color: transparent;
 
 }
 #navbar-text {
   text-align: end;
-  text-transform: uppercase;
+  text-transform: capitalize;
   color: var(--current-text);
-  backdrop-filter: blur(10px);
 }
 .nav-link{
   color: var(--current-text);
+  text-transform: capitalize;
+}
+.active {
+  --bs-navbar-active-color: var(--current-text);
+  text-transform:uppercase;  color: 
 }
 .dropdown-menu {
   margin-top: 5px;
@@ -143,7 +155,7 @@ header {
 }
 .brand-text {
   font-family: "Open Sans", Roboto, sans-serif;
-  background-color: lightblue;
+  background-color: var(--current-div-gradient);
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--current-text);
@@ -392,6 +404,7 @@ ul {
       width:50%;
       border-radius: 50px;
       margin: auto;
+      color: var(--current-text);
 }
 /*Contact Styles*/
 
@@ -434,12 +447,22 @@ height: 40px;
 }
 /*Media Queries*/
 
+
+
 @media (max-width: 320px){
+
 .buttons-container{
   align-content: center;
   margin: auto;
   flex-direction: column;
-}}
+}
+#call-button::after {
+  content: "";
+}
+#mail-button::after {
+  content: "";
+}
+}
 @media (max-width: 479px){
   .story-full-row-container {
     flex-direction: column;
@@ -476,6 +499,7 @@ height: 40px;
     width: 100%;
     margin: auto;
   }
+
 }
 
 @media (min-width: 480px) {

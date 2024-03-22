@@ -44,12 +44,13 @@
         <!-- Functionaliy copied and midified from Hackathon project "ALLs WELL" -->
 
         <nav class="navbar navbar-expand-lg navbar-light pr-2">
-            <div class="container-fluid">
-                <a href="{% url 'home' %}"><span class="brand-text">
+            <div  class="container-fluid">
+                <a href="{% url 'home' %}"><div class="brand-text">
                         <h1><i class="fas fa-paw pt-2"></i> WOOFERS</h1>
-                    </span></a>
-                    <div class="mode-switch-container">
-                        <button onclick="flipState()" class="mode_switch btn-sm btn-secondary" id="mode_switch"> Dark Mode</button></div>
+                    </div></a>
+                    <div class="mode-switch-container" onclick="flipState()">
+                        <i class="fa-solid fa-lightbulb"></i>
+</div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -58,24 +59,24 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 dropdown-menu dropdown-menu-end"
                         style="right: 0; left: auto">
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase {% if request.path == home_url %}active{% endif %}"
+                            <a class="nav-link {% if request.path == home_url %}active{% endif %}"
                                 aria-current="page" href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase {% if request.path == doggo_url %}active{% endif %}"
+                            <a class="nav-link {% if request.path == doggo_url %}active{% endif %}"
                                 aria-current="page" href="{% url 'doggos' %}">Dogs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase {% if request.path == story_url %}active{% endif %}"
+                            <a class="nav-link {% if request.path == story_url %}active{% endif %}"
                                 aria-current="page" href="{% url 'story' %}">Stories</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase {% if request.path == logout_url %}active{% endif %}"
+                            <a class="nav-link {% if request.path == contact_url %}active{% endif %}"
                                 aria-current="page" href="{% url 'contact' %}">Contact</a>
                             </li>
                                 {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link text-uppercase {% if request.path == logout_url %}active{% endif %}"
+                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
                                 aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         {% else %}

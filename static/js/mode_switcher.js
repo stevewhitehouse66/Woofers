@@ -3,10 +3,11 @@
 //to stop page reverting to light colours on clicking navigation link.
 
 //Get mode button element
-const modeSwitch = document.getElementById("mode_switch");
+const modeSwitch = document.getElementById("mode_switch_container");
 // Load mode from local storage or default to light mode
 let isDarkMode = localStorage.getItem("isDarkMode") === "true";
-
+const darkHTML = '<i class="fa-solid fa-lightbulb mode-switch"></i>'
+const lightHTML = '<i class="fa-regular fa-lightbulb mode-switch"></i>'
 function updateMode() {
 //If --setting = light, switch to dark
   if (isDarkMode) {
@@ -19,7 +20,7 @@ function updateMode() {
       "linear-gradient(90deg, rgb(50,50,50) 0%, rgba(80,80,80,1) 100%)"
     );
     document.documentElement.style.setProperty("--current-text", "#fafafa");
-    modeSwitch.textContent = "Light Mode";
+    modeSwitch.innerHTML= lightHTML;
   } else {
     document.documentElement.style.setProperty(
       "--current-background-gradient",
@@ -30,7 +31,7 @@ function updateMode() {
       "linear-gradient(90deg,rgb(230, 230, 235) 0%,rgb(250, 250, 245) 100%)"
     );
     document.documentElement.style.setProperty("--current-text", "#000000");
-    modeSwitch.textContent = "Dark Mode";
+    modeSwitch.innerHTML= darkHTML;
   }
 }
 
