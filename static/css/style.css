@@ -16,16 +16,9 @@
 }
 /* Set Variables for JavaScript*/
 :root {
-  --light-background-gradient: linear-gradient(90deg, #d9e7ff 0%, #e3ffe7 50%, #d9e7ff 100%);
-  --dark-background-gradient: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(50,50,80,1) 50%, rgba(0,0,0,1) 100%);
-  --light-div-gradient: linear-gradient(90deg,rgb(230, 230, 235) 0%,rgb(250, 250, 245) 100%);
-  --dark-div-gradient: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(50,50,80,1) 50%);
-  --light-text: #fafafa;
-  --dark-text: #000;
+  --current-text: #101010;
   --current-background-gradient: linear-gradient(90deg, #d9e7ff 0%, #e3ffe7 50%, #d9e7ff 100%);
   --current-div-gradient: linear-gradient(90deg,rgb(230, 230, 235) 0%,rgb(250, 250, 245) 100%);
-  --current-text: #000;
-  --setting: light
 }
 
 /*generic styles*/
@@ -41,7 +34,7 @@ body {
 
 a {
   text-decoration: none;
-  color: var(--current-text)
+  color: var(--current-text);
   cursor: pointer;
 }
 hr {
@@ -57,13 +50,16 @@ h3,
 h4 {
   font-family: "Open Sans", Roboto, sans-serif;
   text-transform: capitalize;
+  color: var(--current-text);
 }
 hr {
+  color: var(--current-text);
   width: 50%;
   margin: 0 auto;
 }
 p {
   margin: 2px;
+  color: var(--current-text);
 }
 
 /*Layout Styles*/
@@ -104,18 +100,27 @@ main {
 
   text-transform: uppercase;
 }
+.mode-switch-container{
+  display:flexbox;
+  align-items: center;
+
+}
 #navbar-text {
   text-align: end;
   text-transform: uppercase;
-
+  color: var(--current-text);
   backdrop-filter: blur(10px);
+}
+.nav-link{
+  color: var(--current-text);
 }
 .dropdown-menu {
   margin-top: 5px;
   width: fit-content;
   border: 0;
   padding-inline: 20px;
-  backdrop-filter: blur(10px);
+  color: var(--current-text);
+  background: var(--current-div-gradient);
 }
 
 .staff-links {
@@ -124,6 +129,7 @@ main {
   margin: auto;
   margin-top: 5px;
   background: var(--current-div-gradient);
+  color: var(--current-text);
 }
 
 .column {
@@ -133,14 +139,14 @@ main {
 /*Header Styles*/
 
 header {
-  background: linear-gradient(90deg, #d9e7ff 0%, #e3ffe7 50%, #d9e7ff 100%);
+  background: var(--current-background-gradient);
 }
 .brand-text {
   font-family: "Open Sans", Roboto, sans-serif;
   background-color: lightblue;
   font-size: 1.6rem;
   font-weight: 600;
-  color: #4a4a4f;
+  color: var(--current-text);
 }
 
 /* Home Page Styles*/
@@ -158,7 +164,8 @@ header {
   text-transform: uppercase;
   font-size: 1.3rem;
   font-weight: 500;
-  color: #4a4a4f;
+  color: var(--current-text);
+  ;
 }
 .home-profile-image-container {
   transform: rotate(2deg);
@@ -184,6 +191,7 @@ header {
   margin: auto;
   border-radius: 10px;
   background: var(--current-div-gradient);
+  color: var(--current-text);
 }
 .add-story-link {
   margin: auto;
@@ -215,6 +223,7 @@ header {
   text-align: center;
   font-size: large;
   margin: auto;
+  color: var(--current-text);
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -312,7 +321,7 @@ header {
   width: 100%;
   padding: 0;
   margin-inline: auto;
-  background: var(--current-background-gradient)
+  background: var(--current-background-gradient);
   font-size: medium;
 }
 .footer-text {
@@ -373,6 +382,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  color: var(--current-text);
 }
 
 /*Message Styles*/
