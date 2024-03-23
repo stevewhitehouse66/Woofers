@@ -153,6 +153,8 @@ main {
 
 header {
   background: var(--current-background-gradient);
+  margin-inline: 5px;
+  margin-top: 5px;
 }
 .brand-text {
   font-family: "Open Sans", Roboto, sans-serif;

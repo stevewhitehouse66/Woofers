@@ -3,7 +3,7 @@
 //to stop page reverting to light colours on clicking navigation link.
 
 //Get mode button element
-const modeSwitch = document.getElementById("mode_switch_container");
+const modeSwitch = document.getElementById("mode-switch-container");
 // Load mode from local storage or default to light mode
 let isDarkMode = localStorage.getItem("isDarkMode") === "true";
 const darkHTML = '<i class="fa-solid fa-lightbulb mode-switch"></i>'
