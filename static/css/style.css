@@ -95,6 +95,10 @@ main {
   width: 96%;
   margin: auto;
 }
+.navbar{
+
+  width: 96%;
+}
 #navbar-nav {
   text-align: right;
   text-transform: uppercase;
@@ -103,6 +107,7 @@ main {
 .mode-switch-container{
   display:flexbox;
   align-items: center;
+  width: 50px;
   color: var(--current-text);
   background-color: transparent;
   cursor: pointer;
@@ -118,6 +123,9 @@ main {
   text-align: end;
   text-transform: capitalize;
   color: var(--current-text);
+}
+.toggler-icon{
+  color: var(--current-text) !important;
 }
 .nav-link{
   color: var(--current-text);
@@ -180,7 +188,7 @@ header {
   font-size: 1.3rem;
   font-weight: 500;
   color: var(--current-text);
-  ;
+
 }
 .home-profile-image-container {
   transform: rotate(2deg);
