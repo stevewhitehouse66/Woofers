@@ -125,7 +125,7 @@ main {
 }
 .active {
   --bs-navbar-active-color: var(--current-text);
-  text-transform:uppercase;  color: 
+  text-transform:uppercase;
 }
 .dropdown-menu {
   margin-top: 5px;
