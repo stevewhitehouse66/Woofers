@@ -6,7 +6,7 @@ class DoggoForm(forms.ModelForm):
 
     class Meta:
         model = Doggo
-        fields = ['name', 'sex', 'breed', 'age', 'profile_image', 'location',
+        fields = ['profile_image', 'name', 'sex', 'breed', 'age', 'location',
                   'status', 'vet_checked', 'vet_note', 'vet_vaccinated',
                   'vet_neutered', 'vet_weight', 'temperament', 'training',
                   'behaviour', 'notes']
@@ -19,3 +19,4 @@ class DoggoForm(forms.ModelForm):
         }
         vet_vaccinated = forms.DateField(required=False)
         vet_checked = forms.DateField(required=False)
+
