@@ -7,22 +7,21 @@
 <div class="home-container">
     <div class="story-container">
         {% for story in story_list_pinned %}
+        <a href="{% url 'story_detail' pk=story.pk %}">
         <div class="row">
             <div class="col-12 mt-3 flex-row">
                 <div class="story-image-container">
                     {% if "placeholder" in story.featured_image.url %}
-                    <a><img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}" href="{% url 'story_detail' pk=story.pk %}"></a>
+                    <img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}">
                     {% else %}
-                    <a><img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}" href="{% url 'story_detail' pk=story.pk %}"></a>
+                    <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}">
                     {% endif %}
                 </div>
                 <div class="story-text-container justify-content-center">
                     <div class="column">
                         <div>
-                        <a href="{% url 'story_detail' pk=story.pk %}">
                         <div class="title-text">
                         <h1 class="text-uppercase title-text">{{ story.title }}</h1></div>
-                        </a>
                         </div>
                         <div class="story-main">
                         <p class="excerpt">{{ story.excerpt | truncatechars:150}}</p>
@@ -33,26 +32,25 @@
                 </div>
             </div>
         <br>
-        </div>
+        </div></a>
         {% endfor %}
 <!-- Display "Published" Stories most recent first -->
         {% for story in story_list_published %}
         <div class="row">
+            <a href="{% url 'story_detail' pk=story.pk %}">
             <div class="col-12 mt-3 flex-row">
                 <div class="story-image-container">
                     {% if "placeholder" in story.featured_image.url %}
-                    <img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}" href="{% url 'story_detail' pk=story.pk %}">
+                    <img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}">
                     {% else %}
-                    <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}" href="{% url 'story_detail' pk=story.pk %}">
+                    <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}" >
                     {% endif %}
                 </div>
                 <div class="story-text-container justify-content-center">
                     <div class="column">
                         <div>
-                        <a href="{% url 'story_detail' pk=story.pk %}">
                         <div class="title-text">
                         <h1 class="text-uppercase title-text">{{ story.title }}</h1></div>
-                        </a>
                         </div>
                         <div class="story-main">
                         <p class="excerpt small">{{ story.excerpt | truncatechars:150}}</p>
@@ -62,33 +60,32 @@
                 </div>
             </div>
         <br>
-        </div>
+        </div></a>
         {% endfor %}
     </div>
 <!-- Display Dog Profiles most recent first -->
     <div class="doggo-container">
     {% for doggo in doggo_list %}
-    <div class="row">
+    <a href="{% url 'doggo_detail' pk=doggo.pk %}">
+        <div class="row">
         <div class="col-12 mt-3">
-            <a href="{% url 'doggo_detail' pk=doggo.pk %}">
             <div class="home-profile-image-container">
             {% if "placeholder" in doggo.profile_image.url %}
-            <a href="{% url 'doggo_detail' pk=doggo.pk %}"><img src="{% static 'images/default_doggo2.png' %}" class="home-profile-image" alt="{{ doggo.name }}" ></a>
+            <img src="{% static 'images/default_doggo2.png' %}" class="home-profile-image" alt="{{ doggo.name }}" >
             {% else %}
-            <a href="{% url 'doggo_detail' pk=doggo.pk %}"><img src="{{ doggo.profile_image.url }}" class="home-profile-image" alt="{{ doggo.name }}" ></a>
+            <img src="{{ doggo.profile_image.url }}" class="home-profile-image" alt="{{ doggo.name }}" >
             {% endif %}
             </div>
         <h1 class="name-text">{{ doggo.name }}</h1>
         <p> Breed: {{ doggo.breed}}</p>
         <p> Age: {{ doggo.age }}</p>
-        </a>
         <hr>
         <div class="doggo-main">
         <p> About: {{ doggo.notes}}</p>
         </div>
         <p class ="small"> Added on: {{ doggo.added_on}}</p>
         </div>
-    </div>
+    </div></a>
         {% endfor %}
     </div>
 </div>

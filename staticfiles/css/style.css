@@ -359,7 +359,7 @@ header {
 }
 /*Form Styles*/
 
-.form-container {
+.contact-form-container {
   background: var(--current-div-gradient);
   margin: auto;
   width: fit-content;
@@ -368,21 +368,30 @@ header {
 
   border-radius: 10px;
 }
+.form-container {
+  background: var(--current-div-gradient);
+  margin: auto;
+  box-shadow: 0 1px 1px #4a4a4f;
+  border-radius: 10px;
+}
 
 .btn-signup,
 .btn-edit {
-  background-color: #3d9cb3;
-  color: #fff;
+  border: 3px solid var(--current-text);
+  background-color: var(--current-div-gradient);
+  color: var(--current-text);
+  margin-top: 5px;
+  padding-bottom: 8px;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-  background-color: #fff;
-  color: #3d9cb3;
+  background-color: var(--current-text);
+  color: var(--current-div-gradient);
 }
 .btn-delete {
   color: #fff;
-  background: #e84610;
+  background: #852302;
 }
 
 .faded {

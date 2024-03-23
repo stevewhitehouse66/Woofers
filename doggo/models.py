@@ -26,10 +26,10 @@ class Doggo(models.Model):
     location = models.TextField(max_length=200)
     age = models.IntegerField()
     status = models.IntegerField(choices=STATUS, default=0)
-    vet_checked = models.DateField(None)
+    vet_checked = models.DateField(null=True, blank=True)
     vet_note = models.TextField(blank=True)
     vet_medication = models.TextField(blank=True)
-    vet_vaccinated = models.DateField(None)
+    vet_vaccinated = models.DateField(null=True, blank=True)
     vet_neutered = models.IntegerField(choices=NEUTERED, default=0)
     vet_weight = models.DecimalField(max_digits=5, decimal_places=2,
                                      verbose_name='Weight (kg)', default=0.00)

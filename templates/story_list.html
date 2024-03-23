@@ -8,32 +8,32 @@
 {% endif %}
 <div class="list-container">
 {% for story in story_list %}
+<a href="{% url 'story_detail' pk=story.pk %}">
     <div class="story-full-row-container mb-1">
         
         <div class="col-12 mt-3">
             <div class="story-image-container">
                 {% if "placeholder" in story.featured_image.url %}
-                <a href="{% url 'story_detail' pk=story.pk %}"><img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}"></a>
+                <img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}">
                 {% else %}
-                <a href="{% url 'story_detail' pk=story.pk %}"><img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}"></a>
+                <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}">
                 {% endif %}
             </div>
             <div class="story-top">
                 <div class="column">
                     <div>
-                    <a href="{% url 'story_detail' pk=story.pk %}">
                     <div class ="story-link-container"><h1 class="text-uppercase story-title">{{ story.title }}</h1>
-                    </a>
+                    
                     </div>
             <div class="story-main">
             <p class="excerpt">{{ story.excerpt | truncatechars:200}}</p>
             <p class="small">{{ story.created_on}} by {{ story.author }}</p>
             </div>
         </div></div>
-        </div></a>
+        </div>
     <br>
     </div>
-</div>
+</div></a>
     {% endfor %}
 </div>
 <!-- story_list.html content ends here -->
