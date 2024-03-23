@@ -343,7 +343,7 @@ header {
   bottom: 0;
   width: 100%;
   padding: 0;
-  margin-inline: auto;
+  margin: auto;
   background: var(--current-background-gradient);
   font-size: medium;
 
@@ -383,17 +383,16 @@ header {
 
 .btn-signup,
 .btn-edit {
-  border: 3px solid var(--current-text);
-  background-color: var(--current-div-gradient);
-  color: var(--current-text);
+  background-color: darkgreen;
+  color: #fafafa;
   margin-top: 5px;
   padding-bottom: 8px;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-  background-color: var(--current-text);
-  color: var(--current-div-gradient);
+  background-color: lightgreen;
+  color: #fafafa;
 }
 .btn-delete {
   color: #fff;
