@@ -29,7 +29,7 @@ body {
   background: var(--current-background-gradient);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  margin-bottom: 50px;
+  padding-bottom: 65px;
 }
 
 a {
@@ -346,6 +346,7 @@ header {
   margin-inline: auto;
   background: var(--current-background-gradient);
   font-size: medium;
+
 }
 .footer-text {
   margin: 0;
@@ -356,6 +357,11 @@ header {
   margin: auto;
   display: inline-flex;
   flex-direction: row;
+}
+.social-icon{
+  font-size: 3em;
+  margin: 10px;
+  padding: 5px;
 }
 /*Form Styles*/
 
