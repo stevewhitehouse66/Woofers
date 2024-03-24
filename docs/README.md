@@ -1,5 +1,5 @@
 # Woofers, Nov 2023 WMCA Capstone Project for Code Institute
-By Steve Whitehouse
+By Steve Whitehouse - March 2024
 
 # Sections
 - URLs
@@ -11,12 +11,13 @@ By Steve Whitehouse
 - Bugs
 
 ### URLs
-- This readme - https://github.com/stevewhitehouse66/Woofers/blob/main/README.md
-- Main Repo - https://github.com/stevewhitehouse66/Woofers
-- Miro Ideation Board - https://miro.com/app/board/uXjVNjeWKu8=/
+- [This readme](https://github.com/stevewhitehouse66/Woofers/blob/docs/README.md)
+- [Main Repo](https://github.com/stevewhitehouse66/Woofers)
+- [project Board](https://github.com/users/stevewhitehouse66/projects/6)
+- [Miro Ideation Board](https://miro.com/app/board/uXjVNjeWKu8=/)
 
 ### Introduction
-Woofers is a fictional website created for my Capstone Project.<br>
+Woofers is a website for a fictional dog rescue created for my end of Bootcamp personal Project.<br>
 As I've had many rescue dogs over the years dog rescues are close to my heart.
 
 ### Planning
@@ -61,16 +62,60 @@ I have applied Moscow pioritisation to these...
 
 #### Initial ERD
 
- https://github.com/stevewhitehouse66/Woofers/blob/main/images/readme/woofers_project.drawio.png
+ [Initial ERD Diagram](https://github.com/stevewhitehouse66/Woofers/blob/main/images/readme/woofers_project.drawio.png)
 
 
 #### Wireframes
-- Wireframe Mobile Landing Page - https://github.com/stevewhitehouse66/Woofers/blob/main/images/readme/landing-page-mobile.png
-- Wireframe Mobile Story Detail Page -https://github.com/stevewhitehouse66/Woofers/blob/main/images/readme/story-detail-page-mobile.png
-- Wireframe Mobile Dog Detail Page - https://github.com/stevewhitehouse66/Woofers/blob/main/images/readme/dog-detail-page-mobile.png
-- Wireframe Desktop Landing Page - https://github.com/stevewhitehouse66/Woofers/blob/main/images/readme/landing-page-med-large-desktop.png
-- Wireframe Desktop story detail Page - https://github.com/stevewhitehouse66/Woofers/blob/main/images/readme/story-detail-page-med-large-desktop.png
-- Wireframe Desktop dog detail Page - https://github.com/stevewhitehouse66/Woofers/blob/main/images/readme/dog-detail-page-med-large-desktop.png
+- [Wireframe Mobile Landing Page](https://github.com/stevewhitehouse66/Woofers/blob/docs/images/readme/landing-page-mobile.png)
+- [Wireframe Mobile Story Detail Page](https://github.com/stevewhitehouse66/Woofers/blob/main/images/readme/story-detail-page-mobile.png)
+- [Wireframe Mobile Dog Detail Page](https://github.com/stevewhitehouse66/Woofers/blob/docs/images/readme/dog-detail-page-mobile.png)
+- [Wireframe Desktop Landing Page](https://github.com/stevewhitehouse66/Woofers/blob/docs/images/readme/landing-page-med-large-desktop.png)
+- [Wireframe Desktop story detail Page](https://github.com/stevewhitehouse66/Woofers/blob/docs/images/readme/story-detail-page-med-large-desktop.png)
+- [Wireframe Desktop dog detail Page](https://github.com/stevewhitehouse66/Woofers/blob/docs/images/readme/dog-detail-page-med-large-desktop.png)
+
+### Features
+
+#### Home Page
+- Light/Dark Mode for whole site, setting stored in local storage.
+- Main menu, reflected across all pages, offers access to Stories, Dogs, Contact Info, Registration and Login functions.
+- A tiled list of Stories, Pinned First then the rest of the published stories, with a brief excerpt of each story
+- A tiled list of Dogs available to adopt or undergoing the process of preperation and assessment pre-adoption, with a preview of each dogs details.
+- Social Media Links in Footer, reflected across all pages.
+
+
+A list of Dogs available to adopt or undergoing the process of preperation and assessment pre-adoption, with a preview of each dogs details.
+Each preview opens into a more detailed view of the Dog.
+
+#### Stories Page
+A tiled list of Story previews, containing a brief excerpt. 
+Ideal for Rescue News, fundraising efforts and disseminating general information in a story format.
+When clicked each tile will open the full version of the relevant story.
+
+#### Dogs Page
+A list of Dog Profile previews, containing  brief information. 
+When clicked each tile will open the full version of the relevant profile, including more detailed information for admin/staff users.
+
+#### Contact Page
+Contains contact and address information as well as a Map, Call and Email buttons.
+Contact functionality is deliberately left public so that pet owners needing help may contact the rescue anonymously.
+
+#### Signup and User permissions functionality
+- Unregistered Users may view the entire site.
+- Registered Users may view the entire site, but have no access to further funtionality at this time.
+- Staff and Admin Users may add new Stories and Dog Profiles from the relevant Story and Dog List pages.
+- Staff and Admin Users have access to extra information on dog profiles not visible to unregistered or site-user level Users.
+- Staff and Admin Users may add new, edit and delete Stories from individual Story pages
+- Staff and Admin Users may add new, edit and delete Dog-Profiles from individual profile pages
+
+#### Future Features
+in later iterations of this project I will add the following functionality...
+- Comments to Stories for greater User Interaction
+- Story categories and sorting by category for improved User Experience.
+- A contact form for improved User Experience contacting the rescue.
+- A picture gallery for each dog profile to showcase a dogs inprovement over time.
+- Ability to choose a dogs picture from the gallery as its Profile Image.
+- Sorting dog profiles by breed for improved User Experience.
+- Integrate a secure payment platform for Donations.
 
 ### Setting Up
 
@@ -130,3 +175,14 @@ Full Manual testing was carried out on all site functions.
 | On Story Page - Click "+ Add New Story" Link              | Add A New Story Form Opens                                                   | Add A New Story Form Opens                                                   |
 | On Story Page - Click "Edit" Link                         | Edit A Story Form Opens                                                      | Edit A Story Form Opens                                                      |
 | On the Story Page - Click "Delete" Link                   | A Delete confirmation dialogue Opens On Confirmation, the Story is deleted   | A Delete confirmation dialogue Opens On Confirmation, the Story is deleted   |
+
+#### Browser Testing
+
+#### Desktop
+
+Tested on Microsoft EDGE, Mozilla Firefox and Chrome browsers on Desktop/ Laptop. 
+
+#### Mobile
+
+Iphone XR, tested on  Apple Safari, Mozilla Firefox and Google Chrome.
+Unfortuneately i have no acccess to Android devices, but third parties have viewed the site on Android Devices.
