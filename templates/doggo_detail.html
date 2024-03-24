@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block content %} 
+{% block content %}
 {% load static %}
 {% url 'doggo_add' as add_url %}
 {% url 'doggo_edit' as edit_url %}
@@ -7,40 +7,34 @@
 <!-- doggo_detail.html content starts here -->
 <div class="full-row-container">
 
-        <div class= "dog-text-container justify-content-center"> 
-
-        
+        <div class="dog-text-container justify-content-center">
         <h1 class="name-text text-uppercase tex-center justify-content-center">Name: {{ doggo.name }}</h1>
         <p> Breed: {{ doggo.breed}}</p>
         <p> Sex: {{ doggo.get_sex_display}}</p>
         <p> Age: {{ doggo.age }}</p>
-        
         <p> About: {{ doggo.notes}}</p>
         <p class="small"> Added on: {{ doggo.added_on}}</p>
-        
         <hr>
         <!-- Staff information -->
         {% if user.is_staff %}
-        <p class = "text-danger">Detailed Information, Staff Only!</p>
-        <p>Location: {{ doggo.location }}</p> 
+        <p class="text-danger">Detailed Information, Staff Only!</p>
+        <p>Location: {{ doggo.location }}</p>
         <p>Status: {{ doggo.get_status_display}}</p>
         <p>Temperament: {{ doggo.temperament }}</p>
         <p>Training: {{ doggo.training }}</p>
         <p>Behaviour: {{ doggo.behaviour }}</p>
         <p>Last Updated: {{ doggo.updated_on }}</p>
         <hr class="text-center">
-        <P class="small">Vet Info:</p>
+        <p class="small">Vet Info:</p>
         <div class="vet-info col-10">
             <p>Vet Checked: {{ doggo.vet_checked }}</p>
             <p>Vet Notes: {{ doggo.vet_note }}</p>
             <p>Medication: {{ doggo.vet_medication }}</p>
             <p>Last Vaccinated: {{ doggo.vet_vaccinated }}</p>
             <p>Neutered / Spayed: {{ doggo.get_vet_neutered_display }}</p>
-            <p>Weight: {{ doggo.vet_weight }} Kg</p>    
+            <p>Weight: {{ doggo.vet_weight }} Kg</p>
         </div>
         {% endif %}
-        
-        
     </div>
     <div class="story-image-container">
         {% if "placeholder" in doggo.profile_image.url %}

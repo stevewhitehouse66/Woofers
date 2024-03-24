@@ -4,7 +4,7 @@
 {% url 'story_add' as add_url %}
 {% url 'story_edit' as edit_url %}
 {% url 'story_delete' as delete_url %}
-{% block content %} 
+{% block content %}
 <!-- story_detail.html content starts here -->
 <div class="story-full-row-container">
     {% if user.is_staff %}
@@ -26,14 +26,14 @@
         <div class="story-text-container justify-content-center">
             {% if user.is_staff %}
 
-            {% endif %}    
-            <div class ="story-title-container"><h1 class="text-uppercase story-title">{{ story.title }}</h1>
-                
+            {% endif %}
+            <div class="story-title-container"><h1 class="text-uppercase story-title">{{ story.title }}</h1>
+
                 <div class="story-main"> <p>{{ story.content | safe }}</p></div>
             </div>
             <br>
         </div>
-    
+
 </div>
 <!-- story_detail.html content ends here -->
 {% endblock %}

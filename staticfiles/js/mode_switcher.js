@@ -13,13 +13,13 @@ function updateMode() {
   if (isDarkMode) {
     document.documentElement.style.setProperty(
       "--current-background-gradient",
-      "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(50,50,80,1) 50%, rgba(0,0,0,1) 100%)"
+      "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(30,30,30,1) 50%, rgba(0,0,0,1) 100%)"
     );
     document.documentElement.style.setProperty(
       "--current-div-gradient",
-      "linear-gradient(90deg, rgb(50,50,50) 0%, rgba(80,80,80,1) 100%)"
+      "linear-gradient(90deg, rgb(00,00,00) 0%, rgba(10,10,30,1) 100%)"
     );
-    document.documentElement.style.setProperty("--current-text", "#fafafa");
+    document.documentElement.style.setProperty("--current-text", "#ffffff");
     modeSwitch.innerHTML= lightHTML;
   } else {
     document.documentElement.style.setProperty(

@@ -95,6 +95,21 @@ main {
   width: 96%;
   margin: auto;
 }
+/*Header Styles*/
+
+header {
+  background: var(--current-background-gradient);
+  margin-inline: 5px;
+  margin-top: 5px;
+}
+.brand-text {
+  font-family: "Open Sans", Roboto, sans-serif;
+  background-color: var(--current-div-gradient);
+  font-size: 2.0rem;
+  font-weight: 600;
+  color: var(--current-text);
+}
+
 .navbar{
 
   width: 96%;
@@ -105,24 +120,27 @@ main {
 }
 
 .mode-switch-container{
-  display:flexbox;
-  align-items: center;
+  display:flex;
+  justify-content: flex-start;
   width: 50px;
   color: var(--current-text);
   background-color: transparent;
   cursor: pointer;
   margin: auto;
+  margin-left: 260px;
 }
 .mode-switch{
 
   color: var(--current-text);
   background-color: transparent;
+  align-self: flex-start;
 
 }
 #navbar-text {
   text-align: end;
   text-transform: capitalize;
   color: var(--current-text);
+  
 }
 .toggler-icon{
   color: var(--current-text) !important;
@@ -130,6 +148,7 @@ main {
 .nav-link{
   color: var(--current-text);
   text-transform: capitalize;
+  font-size: large;
 }
 .active {
   --bs-navbar-active-color: var(--current-text);
@@ -157,20 +176,6 @@ main {
   width: 100%;
 }
 
-/*Header Styles*/
-
-header {
-  background: var(--current-background-gradient);
-  margin-inline: 5px;
-  margin-top: 5px;
-}
-.brand-text {
-  font-family: "Open Sans", Roboto, sans-serif;
-  background-color: var(--current-div-gradient);
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--current-text);
-}
 
 /* Home Page Styles*/
 
@@ -227,7 +232,7 @@ header {
   flex-direction: column;
   text-align: center;
   font-family: "Open Sans", Roboto, sans-serif;
-  font-size: medium;
+  font-size: large;
   margin: auto;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -244,7 +249,16 @@ header {
 .title-text {
   font-family: "Open Sans", Roboto, sans-serif;
   text-align: center;
-  font-size: large;
+  font-size: larger;
+  margin: auto;
+  color: var(--current-text);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.story-title {
+  font-family: "Open Sans", Roboto, sans-serif;
+  text-align: center;
+  font-size: larger;
   margin: auto;
   color: var(--current-text);
   padding-top: 10px;
@@ -289,7 +303,7 @@ header {
 
 .name-text {
   font-family: "Open Sans", Roboto, sans-serif;
-  font-size: medium;
+  font-size: larger;
   margin: auto;
   padding-top: 20px;
 }
@@ -325,6 +339,8 @@ header {
   padding-left: 10px;
 }
 .dog-text-container {
+  font-weight: 700;
+  font-size: large;
   width: 100%;
   display: flex;
   flex-direction: column;

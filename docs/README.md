@@ -90,10 +90,12 @@ Each preview opens into a more detailed view of the Dog.
 A tiled list of Story previews, containing a brief excerpt. 
 Ideal for Rescue News, fundraising efforts and disseminating general information in a story format.
 When clicked each tile will open the full version of the relevant story.
+Placeholder image is displayed when no other image is available.
 
 #### Dogs Page
 A list of Dog Profile previews, containing  brief information. 
 When clicked each tile will open the full version of the relevant profile, including more detailed information for admin/staff users.
+Placeholder image is displayed when no other image is available.
 
 #### Contact Page
 Contains contact and address information as well as a Map, Call and Email buttons.
@@ -108,7 +110,8 @@ Contact functionality is deliberately left public so that pet owners needing hel
 - Staff and Admin Users may add new, edit and delete Dog-Profiles from individual profile pages
 
 #### Future Features
-in later iterations of this project I will add the following functionality...
+in later iterations of this project I will add the following functionality.
+
 - Comments to Stories for greater User Interaction
 - Story categories and sorting by category for improved User Experience.
 - A contact form for improved User Experience contacting the rescue.
@@ -116,6 +119,7 @@ in later iterations of this project I will add the following functionality...
 - Ability to choose a dogs picture from the gallery as its Profile Image.
 - Sorting dog profiles by breed for improved User Experience.
 - Integrate a secure payment platform for Donations.
+- Implement Summernote for front end Story add function. 
 
 ### Setting Up
 
@@ -130,10 +134,12 @@ in later iterations of this project I will add the following functionality...
 - AllAuth
 - Cloudinary
 - Crispy Forms
+- Summernote
 - PsyCopG
 - Whitenoise
 - PostgreSQL
 - ElephantSQL
+
 
 ### Testing
 Full Manual testing was carried out on all site functions.
@@ -186,3 +192,29 @@ Tested on Microsoft EDGE, Mozilla Firefox and Chrome browsers on Desktop/ Laptop
 
 Iphone XR, tested on  Apple Safari, Mozilla Firefox and Google Chrome.
 Unfortuneately i have no acccess to Android devices, but third parties have viewed the site on Android Devices.
+
+#### Responsiveness
+
+[Am I Responsive Light mode](images/readme/am-i-responsive-light-mode.png)
+[Am I Responsive Dark mode](images/readme/am-i-responsive-dark-mode.png)
+[Am I Responsive Dark mode again](images/readme/am-i-responsive-dark-mode-2.png)
+
+#### WAVE Accessibility Tool
+
+[Dark Mode Results](images/readme/wave-dark.png)
+
+[Light Mode Results](images/readme/wave-light.png)
+
+#### WCAG Accessibility Tool
+
+[Dark Mode Results](images/readme/wcag-dark.png)
+
+[Light Mode Results](images/readme/wcag-light.png)
+
+I'm not sure why the WCAG checker gives such poor results in the dark screen mode when the contast is clearly very high.
+
+My accessibility tester, (my son who is registered blind), found the dark mode to be far easier to read than the light mode.
+
+#### W3 HTML checker
+Due to Django tags in HTML W£ Checker was unable to be used.
+instead I used HTML5 validator plugin for Dev Environment.
