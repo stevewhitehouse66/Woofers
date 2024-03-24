@@ -18,12 +18,16 @@ urlpatterns = [
 
     # CRUD for Stories
     path('story/add/', views.StoryCreate, name='story_add'),
-    path('story/<int:pk>/update/', views.StoryUpdateView.as_view(), name='story_edit'),
-    path('story/<int:pk>delete/', views.StoryDeleteView.as_view(), name='story_delete'),
+    path('story/<int:pk>/update/', views.StoryUpdateView.as_view(),
+         name='story_edit'),
+    path('story/<int:pk>delete/', views.StoryDeleteView.as_view(),
+         name='story_delete'),
 
     # CRUD for Doggos
-    path('add/', views.DoggoCreate, name='doggo_add'),
-    path('doggo/<int:pk>/update/', views.DoggoUpdateView.as_view(), name='doggo_edit'),
-    path('doggo/<int:pk>/delete/', views.DoggoDeleteView.as_view(), name='doggo_delete'),
+    path('doggo/add/', views.DoggoCreate, name='doggo_add'),
+    path('doggo/<int:pk>/update/', views.DoggoUpdateView.as_view(),
+         name='doggo_edit'),
+    path('doggo/<int:pk>/delete/', views.DoggoDeleteView.as_view(),
+         name='doggo_delete'),
 
 ]

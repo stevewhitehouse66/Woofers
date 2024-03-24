@@ -140,6 +140,35 @@ in later iterations of this project I will add the following functionality.
 - PostgreSQL
 - ElephantSQL
 
+#### Deployment Steps
+- If needed, clone the repository from [https://github.com/stevewhitehouse66/Woofers](https://github.com/stevewhitehouse66/Woofers)
+- At Elephant SQL, create a new instance, note the databse URL for later.
+- At Cloudinary, make a note of your cloudinary url(environment_variable), API_key, API_secret and Cloud Name. Be sure to use the copy to clipboard links!
+- At [https://randomkeygen.com/](https://randomkeygen.com/) create and copy a SECRET_KEY for later
+- Open Heroku and click on New, then New App.
+- Give the app a name and select a region nearby.
+- Click Create App
+- Once created, navigate to settings.
+- Click Settings and then the Reveal Config Vars button.
+- Add the KEYS from the table below, populating with the values obtained in previous steps
+
+| DATABASE_URL               | postgres:// (From Elephant SQL dashboard)                     |
+|----------------------------|---------------------------------------------------------------|
+| DISABLE_COLLECTSTATIC      | 1                                                             |
+| DEBUG                      | (leave empty for null value)                                  |
+| SECRET_KEY                 | Generate with random keygen such as https://randomkeygen.com/ |
+| CLOUDINARY_API_KEY         | From Cloudinary dashboard page                                |
+| CLOUDINARY_API_SECRET      | From Cloudinary dashboard page                                |
+| CLOUDINARY_CLOUD_NAME      | From Cloudinary dashboard page                                |
+| CLOUDINARY_URL             | cloudinary:// (From Cloudinary dashboard page)                |
+
+- Click the Deploy link.
+- Select Github as deployment method
+- Search for the repository and click the Connect Button
+- Ensure "Main" is selected and Click the Deploy button.
+- Once deployed click the View button.
+
+
 
 ### Testing
 Full Manual testing was carried out on all site functions.
@@ -211,10 +240,17 @@ Unfortuneately i have no acccess to Android devices, but third parties have view
 
 [Light Mode Results](images/readme/wcag-light.png)
 
-I'm not sure why the WCAG checker gives such poor results in the dark screen mode when the contast is clearly very high.
+I'm not sure why the WCAG checker gives such poor results in the dark screen mode when the contrast is clearly very high.
 
 My accessibility tester, (my son who is registered blind), found the dark mode to be far easier to read than the light mode.
 
 #### W3 HTML checker
-Due to Django tags in HTML W£ Checker was unable to be used.
-instead I used HTML5 validator plugin for Dev Environment.
+Due to Django tags in HTML W£ Checker was unable to be used as it generated too many errors and stopped.
+Instead I used HTML5 validator plugin for Dev Environment.
+
+### Bugs
+
+#### Fixed Bugs
+- Too many typos, misconceptions and plain wrong ideas to mention.
+- Dropdown Menu refused to move to right side, due to missing navbar class.
+- On Edit functions, completion message fired twice. Used chat GPT suggestion "Override get_success_message method" 

@@ -14,9 +14,9 @@
         <div class="col-12 mt-3">
             <div class="story-image-container">
                 {% if "placeholder" in story.featured_image.url %}
-                <img src="{% static 'images/default_doggo.png' %}" class="story-image" alt="{{ story.title }}">
+                <img src="{% static 'images/default_doggo.png' %}" class="large-story-image" alt="{{ story.title }}">
                 {% else %}
-                <img src="{{ story.featured_image.url }}" class="story-image" alt="{{ story.title }}">
+                <img src="{{ story.featured_image.url }}" class="large-story-image" alt="{{ story.title }}">
                 {% endif %}
             </div>
             <div class="story-top">

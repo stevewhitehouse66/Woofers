@@ -127,7 +127,7 @@ header {
   background-color: transparent;
   cursor: pointer;
   margin: auto;
-  margin-left: 260px;
+  margin-left: 20px;
 }
 .mode-switch{
 
@@ -500,6 +500,14 @@ height: 40px;
 }
 }
 @media (max-width: 479px){
+  .brand-text {
+    font-family: "Open Sans", Roboto, sans-serif;
+    background-color: var(--current-div-gradient);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--current-text);
+  }
+
   .story-full-row-container {
     flex-direction: column;
     width: 100%;
@@ -539,6 +547,7 @@ height: 40px;
 }
 
 @media (min-width: 480px) {
+
   .home-container {
     width: 96%;
     height: 100vh;
@@ -572,3 +581,4 @@ height: 40px;
     flex-direction: column;
   }
 }
+
