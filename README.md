@@ -89,3 +89,44 @@ I have applied Moscow pioritisation to these...
 - Whitenoise
 - PostgreSQL
 - ElephantSQL
+
+### Testing
+Full Manual testing was carried out on all site functions.
+
+#### Manual Testing Table
+|                       **Test Item**                       |                              **Expected Result**                             |                               **Actual Result**                              |
+|:---------------------------------------------------------:|:----------------------------------------------------------------------------:|:----------------------------------------------------------------------------:|
+|                                                           |                                                                              |                                                                              |
+|                                                           |                           **Navigation Functions**                           |                                                                              |
+| On Page Load                                              | Home Page displays                                                           | Home Page displays                                                           |
+| Click Lightbulb Button                                    | Screen mode switches                                                         | Screen mode switches                                                         |
+| Click a dogs Tile on the Home page                        | A detailed view of that dog is displayed                                     | A detailed view of that dog is displayed                                     |
+| Click a story tile on the Home Page                       | The full story is displayed                                                  | The full story is displayed                                                  |
+| Click Home Menu Item                                      | The Home Page is Loaded from any other page                                  | The Home Page is Loaded from any other page                                  |
+| Click Dogs Menu Item                                      | A list of available dogs is displayed                                        | A list of available dogs is displayed                                        |
+| Click a dogs Tile                                         | A detailed view of that dog is displayed                                     | A detailed view of that dog is displayed                                     |
+| Click Stories Menu Item                                   | A list of published stories is displayed                                     | A list of published stories is displayed                                     |
+| Click a stories tile                                      | The full story is displayed                                                  | The full story is displayed                                                  |
+| Click Contact Menu Item                                   | Contact page is displayed                                                    | Contact page is displayed                                                    |
+| Click Call Button                                         | On Mobile devices a call will be initiated (dummy number)                    | On Mobile devices a call will be initiated (dummy number)                    |
+| Click Email Button                                        | A Mailto: function is intitated                                              | A Mailto: function is intitated                                              |
+|                                                           |                                                                              |                                                                              |
+|                                                           |                           **Signup/User Functions**                          |                                                                              |
+| Click Register Menu Item                                  | Registration form opens                                                      | Registration form opens                                                      |
+| Click Submit Button                                       | Form Submits, new user is created and logged in.                             | Form Submits, new user is created and logged in.                             |
+| Click Logout Menu Item                                    | Sign out confirmation displayed                                              | Sign out confirmation displayed                                              |
+| Click Confirm Signout Button                              | User is Signed out and returned to Home Page                                 | User is Signed out and returned to Home Page                                 |
+| Click Logout Menu Item                                    | Sign in Form is opened                                                       | Sign in Form is opened                                                       |
+| Enter Details and Click Sign In                           | User is logged in and Home Page Displayed                                    | User is logged in and Home Page Displayed                                    |
+|                                                           |                                                                              |                                                                              |
+|                                                           |                           **Staff Level Functions**                          |                                                                              |
+|                                                           |                           **Dog Profile Functions**                          |                                                                              |
+| On the Dog List Page - Click "+ Add New Dog Profile" Link | Add A New Dog Profile Form Opens                                             | Add A New Dog Profile Form Opens                                             |
+| On the Dog Detail Page - Click "+ Add New" Link           | Add A New Dog Profile Form Opens                                             | Add A New Dog Profile Form Opens                                             |
+| On the Dog Detail Page - Click "Edit" Link                | Edit A Dog Profile Form Opens                                                | Edit A Dog Profile Form Opens                                                |
+| On the Dog Detail Page - Click "Delete" Link              | A Delete confirmation dialogue Opens On Confirmation, the profile is deleted | A Delete confirmation dialogue Opens On Confirmation, the profile is deleted |
+|                                                           |                              **Story Functions**                             |                                                                              |
+| On Story List Page - Click "+ Add New Story" Link         | Add A New New Story Form Opens                                               | Add A New New Story Form Opens                                               |
+| On Story Page - Click "+ Add New Story" Link              | Add A New Story Form Opens                                                   | Add A New Story Form Opens                                                   |
+| On Story Page - Click "Edit" Link                         | Edit A Story Form Opens                                                      | Edit A Story Form Opens                                                      |
+| On the Story Page - Click "Delete" Link                   | A Delete confirmation dialogue Opens On Confirmation, the Story is deleted   | A Delete confirmation dialogue Opens On Confirmation, the Story is deleted   |
