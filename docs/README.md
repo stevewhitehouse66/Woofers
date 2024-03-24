@@ -2,13 +2,14 @@
 By Steve Whitehouse - March 2024
 
 # Sections
-- URLs
-- Introduction
-- Planning
-- Setting up
-- Deployment
-- Testing
-- Bugs
+- [URLs](#URLs)
+- [Introduction](#Introduction)
+- [Planning](#planning)
+- [Features](#Features)
+- [Technologies](#Technologies)
+- [Deployment](#Deployment)
+- [Testing](#Testing)
+- [Bugs](#Bugs)
 
 ### URLs
 - [This readme](https://github.com/stevewhitehouse66/Woofers/blob/docs/README.md)
@@ -121,7 +122,7 @@ in later iterations of this project I will add the following functionality.
 - Integrate a secure payment platform for Donations.
 - Implement Summernote for front end Story add function. 
 
-### Setting Up
+### Technologies
 
 #### Required Tech Stack:
 - HTML
@@ -254,3 +255,7 @@ Instead I used HTML5 validator plugin for Dev Environment.
 - Too many typos, misconceptions and plain wrong ideas to mention.
 - Dropdown Menu refused to move to right side, due to missing navbar class.
 - On Edit functions, completion message fired twice. Used chat GPT suggestion "Override get_success_message method" 
+
+#### Unfixed Bugs
+
+On Dog Profile edit page, date selection widgets won't display while the DateField will accept a null value.
