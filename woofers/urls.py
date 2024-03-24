@@ -24,4 +24,5 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path("", include("story.urls"), name="story-urls"),
     path('summernote/', include('django_summernote.urls')),
+    path("doggo/", include("doggo.urls"), name="doggo-urls"),
     ]

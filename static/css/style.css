@@ -4,6 +4,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,500;1,700&display=swap");
 
+
 /* clear defaults*/
 * {
   box-sizing: border-box;
@@ -14,6 +15,7 @@
 *:focus {
   color: black;
 }
+
 /* Set Variables for JavaScript*/
 :root {
   --current-text: #101010;
@@ -22,7 +24,6 @@
 }
 
 /*generic styles*/
-
 body {
   min-height: 100vh;
   background: rgb(89, 89, 90) 0%;
@@ -37,13 +38,16 @@ a {
   color: var(--current-text);
   cursor: pointer;
 }
+
 hr {
   color: #4a4a4f;
   width: 90%;
 }
+
 h1 {
   font-size: 100%;
 }
+
 h1,
 h2,
 h3,
@@ -52,11 +56,13 @@ h4 {
   text-transform: capitalize;
   color: var(--current-text);
 }
+
 hr {
   color: var(--current-text);
   width: 50%;
   margin: 0 auto;
 }
+
 p {
   margin: 2px;
   color: var(--current-text);
@@ -66,6 +72,7 @@ p {
 main {
   width: 100%;
 }
+
 .home-container {
   display: flex;
   flex-direction: column;
@@ -90,18 +97,20 @@ main {
   border-radius: 10px;
   background: var(--current-div-gradient);
 }
+
 .list-container {
   padding: 5px;
   width: 96%;
   margin: auto;
 }
-/*Header Styles*/
 
+/*Header Styles*/
 header {
   background: var(--current-background-gradient);
   margin-inline: 5px;
   margin-top: 5px;
 }
+
 .brand-text {
   font-family: "Open Sans", Roboto, sans-serif;
   background-color: var(--current-div-gradient);
@@ -111,9 +120,9 @@ header {
 }
 
 .navbar{
-
   width: 96%;
 }
+
 #navbar-nav {
   text-align: right;
   text-transform: uppercase;
@@ -129,31 +138,35 @@ header {
   margin: auto;
   margin-left: 20px;
 }
-.mode-switch{
 
+.mode-switch{
   color: var(--current-text);
   background-color: transparent;
   align-self: flex-start;
-
 }
+
 #navbar-text {
   text-align: end;
   text-transform: capitalize;
   color: var(--current-text);
   
 }
+
 .toggler-icon{
   color: var(--current-text) !important;
 }
+
 .nav-link{
   color: var(--current-text);
   text-transform: capitalize;
   font-size: large;
 }
+
 .active {
   --bs-navbar-active-color: var(--current-text);
   text-transform:uppercase;
 }
+
 .dropdown-menu {
   margin-top: 5px;
   width: fit-content;
@@ -176,9 +189,7 @@ header {
   width: 100%;
 }
 
-
 /* Home Page Styles*/
-
 .home-container {
   height: 100vh;
   width: 96%;
@@ -202,6 +213,7 @@ header {
   border: 5px white solid;
   box-shadow: 0 1px 1px #4a4a4f;
 }
+
 .home-profile-image {
   margin: auto;
   max-width: 100%;
@@ -209,7 +221,6 @@ header {
 }
 
 /*Story Styles*/
-
 .story-full-row-container {
   display: flex;
   flex-direction: column;
@@ -221,13 +232,16 @@ header {
   background: var(--current-div-gradient);
   color: var(--current-text);
 }
+
 .add-story-link {
   margin: auto;
   width: fit-content;
 }
+
 .story-text-container {
   width: 100%;
 }
+
 .story-title-container {
   flex-direction: column;
   text-align: center;
@@ -237,6 +251,7 @@ header {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 .story-link-container {
   font-family: "Open Sans", Roboto, sans-serif;
   width: fit-content;
@@ -246,6 +261,7 @@ header {
   border-radius: 15px;
   background: var(--current-div-gradient);
 }
+
 .title-text {
   font-family: "Open Sans", Roboto, sans-serif;
   text-align: center;
@@ -255,6 +271,7 @@ header {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 .story-title {
   font-family: "Open Sans", Roboto, sans-serif;
   text-align: center;
@@ -264,6 +281,7 @@ header {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 .story-top {
   display: flex;
   flex-direction: row;
@@ -279,6 +297,7 @@ header {
   margin: auto;
   box-shadow: 0 2px 2px #4a4a4f;
 }
+
 .large-story-image {
   max-width: 300px;
   height: auto;
@@ -286,6 +305,7 @@ header {
   margin: 5px;
   box-shadow: 0 2px 2px #4a4a4f;
 }
+
 .story-main {
   width: 100%;
   justify-content: left;
@@ -295,7 +315,6 @@ header {
 }
 
 /*Dog Profile Styles*/
-
 .add-doggo-link {
   margin: 0 auto;
   width: fit-content;
@@ -312,6 +331,7 @@ header {
   width: fit-content;
   margin: 0 auto;
 }
+
 .profile-image {
   max-width: 200px;
   height: auto;
@@ -324,6 +344,7 @@ header {
   margin: 5px;
   box-shadow: 0 2px 2px #4a4a4f;
 }
+
 .large-doggo-image {
   max-width: 300px;
   height: auto;
@@ -331,6 +352,7 @@ header {
   margin: 5px;
   box-shadow: 0 2px 2px #4a4a4f;
 }
+
 .doggo-main {
   width: 100%;
   font-family: Roboto;
@@ -338,6 +360,7 @@ header {
   padding: 0;
   padding-left: 10px;
 }
+
 .dog-text-container {
   font-weight: 700;
   font-size: large;
@@ -345,15 +368,14 @@ header {
   display: flex;
   flex-direction: column;
 }
+
 .vet-info {
   border: 1px solid black;
   background: #fafafa;
   padding: 2px;
-  padding-bottom: -5px;
 }
 
 /*Footer Styles*/
-
 .footer {
   position: fixed;
   bottom: 0;
@@ -362,24 +384,30 @@ header {
   margin: auto;
   background: var(--current-background-gradient);
   font-size: medium;
-
 }
+
 .footer-text {
   margin: 0;
   padding: 0;
   color: var(--current-text);
 }
+
 .socials-container {
   margin: auto;
   display: inline-flex;
   flex-direction: row;
 }
+
 .social-icon{
   font-size: 3em;
   margin: 10px;
   padding: 5px;
 }
+
 /*Form Styles*/
+.form-label{
+  color: var(--current-text);
+}
 
 .contact-form-container {
   background: var(--current-div-gradient);
@@ -387,9 +415,9 @@ header {
   width: fit-content;
   max-width: 300px;
   box-shadow: 0 1px 1px #4a4a4f;
-
   border-radius: 10px;
 }
+
 .form-container {
   background: var(--current-div-gradient);
   margin: auto;
@@ -410,6 +438,7 @@ header {
   background-color: lightgreen;
   color: #fafafa;
 }
+
 .btn-delete {
   color: #fff;
   background: #852302;
@@ -419,11 +448,7 @@ header {
   color: rgb(172, 175, 175);
 }
 
-.approval {
-  color: rgb(222, 146, 168);
-}
 /* Other Form Styles*/
-
 .create-form {
   padding-bottom: 50px;
 }
@@ -432,6 +457,7 @@ header {
   display: flex;
   flex-direction: row;
 }
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -448,8 +474,8 @@ ul {
       margin: auto;
       color: var(--current-text);
 }
-/*Contact Styles*/
 
+/*Contact Styles*/
 .contact-container{
 
   display: flex;
@@ -472,6 +498,7 @@ ul {
   flex-direction: column;
   margin: auto;
 }
+
 .address-container{
   padding: 5px;
 }
@@ -480,6 +507,7 @@ ul {
   margin: auto;
   box-shadow: 0 1px 1px #4a4a4f;
 }
+
 .buttons-container{
   margin: auto;
 }
@@ -487,10 +515,8 @@ ul {
 .btn{
 height: 40px;
 }
+
 /*Media Queries*/
-
-
-
 @media (max-width: 320px){
 
 .buttons-container{
@@ -499,6 +525,7 @@ height: 40px;
   flex-direction: column;
 }
 }
+
 @media (max-width: 479px){
   .brand-text {
     font-family: "Open Sans", Roboto, sans-serif;
@@ -512,16 +539,20 @@ height: 40px;
     flex-direction: column;
     width: 100%;
   }
+
   .full-row-container {
     flex-direction: column-reverse;
     width: 100%;
   }
+
   .story-image-container {
     width: 100%;
   }
+
   .story-image {
     width: 100%;
   }
+
   .large-story-image {
     width: 100%;
     height: auto;
@@ -529,6 +560,7 @@ height: 40px;
     margin: 5px;
     box-shadow: 0 2px 2px #4a4a4f;
   }
+
   .large-doggo-image {
     width: 100%;
   }
@@ -536,14 +568,15 @@ height: 40px;
   .doggo-image {
     width: 100%;
   }
+
   .footer-text {
     font-size: small;
   }
+
   .profile-image-container {
     width: 100%;
     margin: auto;
   }
-
 }
 
 @media (min-width: 480px) {
@@ -556,14 +589,17 @@ height: 40px;
     flex-direction: row;
     margin: auto;
   }
+
   .full-row-container {
     flex-direction: column-reverse;
     width: 80%;
   }
+
   .story-full-row-container {
     flex-direction: column;
     width: 80%;
   }
+
   .story-container {
     width: 70%;
     height: 120px;
@@ -575,10 +611,10 @@ height: 40px;
     height: 120px;
     padding: 10px;
   }
+
   .dog-text-container {
     width: 100%;
     display: flex;
     flex-direction: column;
   }
 }
-

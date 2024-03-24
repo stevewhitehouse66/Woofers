@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
-STATUS = ((0, "Draft"), (1, "Registered"), (2, "Assesment"), (3, "Vet-Check"),
+STATUS = ((0, "Draft"), (1, "Registered"), (2, "Assessment"), (3, "Vet-Check"),
           (4, "Ready"), (5, "Fostered"), (6, "Adopted"))
 
 
