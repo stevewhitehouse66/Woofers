@@ -9,14 +9,11 @@ from doggo.forms import DoggoForm
 from django.urls import reverse_lazy
 
 
-#Contact View
+# Contact View
 
 
 def ContactView(request):
     return render(request, 'contact.html')
-
-
-# List Views
 
 
 class StoryList(ListView):
@@ -35,24 +32,6 @@ class StoryList(ListView):
     queryset = Story.objects.all()
     template_name = "story_list.html"
     context_object_name = "story_list"
-
-
-class DoggoList(ListView):
-    """
-    Display a list of :model:`story.Story`
-
-    **Context**
-
-    ``story``
-       An instance of :model:`story.Story`.
-
-    **Template:**
-
-    :template:`story_list.html`
-    """
-    queryset = Doggo.objects.all()
-    template_name = "doggo_list.html"
-    context_object_name = "doggo_list"
 
 # Home view, mix of both models
 
@@ -82,8 +61,6 @@ def Home(request):
                                          'story_list_published': story_list_published,
                                          'doggo_list': doggo_list})
 
-# Detail Views
-
 
 class StoryDetailView(DetailView):
     """
@@ -111,8 +88,6 @@ class DoggoDetailView(DetailView):
     """
     model = Doggo
     template_name = 'doggo_detail.html'
-
-# Create Views
 
 
 def StoryCreate(request):
@@ -184,7 +159,7 @@ class StoryUpdateView(SuccessMessageMixin, UpdateView):
     success_url = reverse_lazy('story')
 
     def get_success_message(self, cleaned_data):
-        return "Doggo details updated successfully."
+        return "Dog Profile updated successfully."
 
     def form_valid(self, form):
         messages.success(self.request, self.success_message)
@@ -227,7 +202,7 @@ class StoryDeleteView(SuccessMessageMixin, DeleteView):
     model = Story
     template_name = 'confirm_delete_form.html'
     success_url = reverse_lazy('story')
-    
+
     def get_success_message(self, cleaned_data):
         return "Story Deleted successfully."
 
@@ -244,6 +219,6 @@ class DoggoDeleteView(SuccessMessageMixin, DeleteView):
     model = Doggo
     template_name = 'confirm_delete_form.html'
     success_url = reverse_lazy('doggos')
-    
+
     def get_success_message(self, cleaned_data):
         return "Dog Profile Deleted successfully."

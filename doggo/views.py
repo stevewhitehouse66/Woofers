@@ -104,6 +104,6 @@ class DoggoDeleteView(SuccessMessageMixin, DeleteView):
     model = Doggo
     template_name = 'confirm_delete_form.html'
     success_url = reverse_lazy('doggos')
-    
+
     def get_success_message(self, cleaned_data):
         return "Dog Profile Deleted successfully."
