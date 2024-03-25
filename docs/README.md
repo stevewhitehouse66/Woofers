@@ -77,7 +77,7 @@ I have applied Moscow prioritization to these...
 ### Features
 
 #### Home Page
-- Light/Dark Mode for the whole site, setting stored in local storage.
+- Light/Dark Mode for the whole site, setting stored in local storage. [Light Mode](images/readme/homepage-light.png) [Dark Mode](images/readme/homepage-dark.png)
 - Main menu, reflected across all pages, offers access to Stories, Dogs, Contact Info, Registration, and Login functions.
 - A tiled list of Stories, Pinned First then the rest of the published stories, with a brief excerpt of each story
 - A tiled list of Dogs available to adopt or undergoing the process of preparation and assessment pre-adoption, with a preview of each dog's details.
@@ -101,13 +101,13 @@ Placeholder image is displayed when no other image is available.
 #### Contact Page
 Contains contact and address information as well as a Map, Call, and Email buttons.
 Contact functionality is deliberately left public so that pet owners needing help may contact the rescue anonymously.
-
+[Contact Page](images/readme/contact-page.png)
 #### Signup and User permissions functionality
 - Unregistered Users may view the entire site.
 - Registered Users may view the entire site, but have no access to further functionality at this time.
-- Staff and Admin Users may add new Stories and Dog Profiles from the relevant Story and Dog List pages.
-- Staff and Admin Users have access to extra information on dog profiles not visible to unregistered or site-user level Users.
-- Staff and Admin Users may add new, edit, and delete Stories from individual Story pages
+- Staff and Admin Users may add new Stories and Dog Profiles from the relevant Story and Dog List pages.[Add Story](images/readme/add-new-story-link.png) [Add Profile](images/readme/add-new-dog-profile.png)
+- Staff and Admin Users have access to extra information on dog profiles not visible to unregistered or site-user level Users. [Extra Information](images/readme/dog-view-staff-mode.png)
+- Staff and Admin Users may add new, edit, and delete Stories from individual Story pages [Add Edit Delete](images/readme/dog-view-staff-mode.png)
 - Staff and Admin Users may add new, edit, and delete Dog-Profiles from individual profile pages
 
 #### Staff Features
