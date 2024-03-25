@@ -4,8 +4,8 @@
 {% block content %}
 <!-- doggo_list.html content starts here -->
 {% if user.is_staff %}
-    <div class="add-doggo-link cols-12 py-1  mx-2 my-1 flex-row justify-content-end">
-        <a href="{% url 'doggo_add' %}"><i class="fa-regular fa-plus"></i> Add New Dog Profile</a></div>
+    <div class="add-doggo-link cols-12 py-1  mx-2 my-1 flex-row justify-content-end staff-links">
+        <a href="{% url 'doggo_add' %}"> <i class="fa-regular fa-plus"></i> Add New Dog Profile</a></div>
 {% endif %}
 <h4 class="sub-title text-center">Our Dogs</h4>
 <div class="list-container">

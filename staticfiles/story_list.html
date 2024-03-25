@@ -3,8 +3,8 @@
 {% block content %}
 <!-- Story_list.html content starts here -->
 {% if user.is_staff %}
-    <div class="add-story-link cols-12 py-1 mx-1 my-1 flex-row justify-content-center">
-        <a href="{% url 'story_add' %}"><i class="fa-regular fa-plus"></i> Add New Story</a></div>
+    <div class="add-story-link cols-12 py-1 mx-1 my-1 flex-row justify-content-center staff-links">
+        <a href="{% url 'story_add' %}"> <i class="fa-regular fa-plus"></i> Add New Story</a></div>
 {% endif %}
 <div class="list-container">
 {% for story in story_list %}
