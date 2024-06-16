@@ -38,7 +38,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = bool(os.environ.get("DEBUG", False))
 
 ALLOWED_HOSTS = ['.gitpod.io', '.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = ['https://8000-stevewhitehouse-woofers-thw047m9ung.ws-eu110.gitpod.io', 'https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://8000-stevewhitehouse-woofers-ooh0z4wnob9.ws-eu114.gitpod.io', 'https://*.127.0.0.1']
 
 # Application definition
 

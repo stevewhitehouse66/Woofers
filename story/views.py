@@ -7,7 +7,8 @@ from doggo.models import Doggo
 from .forms import StoryForm
 from doggo.forms import DoggoForm
 from django.urls import reverse_lazy
-
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Contact View
 
@@ -90,6 +91,7 @@ class DoggoDetailView(DetailView):
     template_name = 'doggo_detail.html'
 
 
+@login_required
 def StoryCreate(request):
     """
     Create an instance of :model:`doggo.Doggo`.
@@ -116,6 +118,7 @@ def StoryCreate(request):
     return render(request, 'story_form.html', {'form': form})
 
 
+@login_required
 def DoggoCreate(request):
     """
     Create an instance of :model:`doggo.Doggo`.
@@ -145,7 +148,7 @@ def DoggoCreate(request):
 # Update Views (Based on ChatGPT suggestion to stop message double firing)
 
 
-class StoryUpdateView(SuccessMessageMixin, UpdateView):
+class StoryUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     """
     Edit an instance of :model:`story.Story`.
 
@@ -166,7 +169,7 @@ class StoryUpdateView(SuccessMessageMixin, UpdateView):
         return super().form_valid(form)
 
 
-class DoggoUpdateView(SuccessMessageMixin, UpdateView):
+class DoggoUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     """
     Edit an instance of :model:`doggo.Doggo`.
 
@@ -190,7 +193,7 @@ class DoggoUpdateView(SuccessMessageMixin, UpdateView):
         return super().form_valid(form)
 
 
-class StoryDeleteView(SuccessMessageMixin, DeleteView):
+class StoryDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     """
     Delete an individual story.
 
@@ -207,7 +210,7 @@ class StoryDeleteView(SuccessMessageMixin, DeleteView):
         return "Story Deleted successfully."
 
 
-class DoggoDeleteView(SuccessMessageMixin, DeleteView):
+class DoggoDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     """
     Delete an individual dog profile.
 
