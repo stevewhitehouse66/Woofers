@@ -5,6 +5,8 @@ from django.contrib.messages.views import SuccessMessageMixin
 from .models import Doggo
 from .forms import DoggoForm
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 
@@ -39,7 +41,7 @@ class DoggoDetailView(DetailView):
     model = Doggo
     template_name = 'doggo_detail.html'
 
-
+@login_required
 def DoggoCreate(request):
     """
     Create an instance of :model:`doggo.Doggo`.
@@ -68,7 +70,7 @@ def DoggoCreate(request):
 # Update Views (Based on ChatGPT suggestion to stop message double firing)
 
 
-class DoggoUpdateView(SuccessMessageMixin, UpdateView):
+class DoggoUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     """
     Edit an instance of :model:`doggo.Doggo`.
 
@@ -92,7 +94,7 @@ class DoggoUpdateView(SuccessMessageMixin, UpdateView):
         return super().form_valid(form)
 
 
-class DoggoDeleteView(SuccessMessageMixin, DeleteView):
+class DoggoDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     """
     Delete an individual dog profile.
 
